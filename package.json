@@ -1,0 +1,53 @@
+{
+  "name": "mjml-react",
+  "version": "4.9.0",
+  "description": "Tools for using mjml.io with react",
+  "homepage": "https://github.com/Faire/mjml-react",
+  "repository": "https://github.com/Faire/mjml-react",
+  "author": "Ian Edington <ian@faire.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es6/index.js",
+  "typings": "lib/index.d.ts",
+  "sideEffects": false,
+  "bugs": {
+    "url": "https://github.com/Faire/mjml-react/issues"
+  },
+  "tags": [
+    "email"
+  ],
+  "keywords": [
+    "email",
+    "mjml",
+    "react",
+    "style-components",
+    "storybook"
+  ],
+  "peerDependencies": {
+    "mjml": "4.x"
+  },
+  "scripts": {
+    "lint": "tslint -p .",
+    "jest-clear-cache": "jest --clearCache",
+    "prettier": "prettier --list-different \"./{src,test,examples,scripts}/**/*.ts\"",
+    "fix-prettier": "prettier --write \"./{src,test,examples,scripts}/**/*.ts\"",
+    "jest": "jest",
+    "test": "npm run lint && npm run prettier && npm run dtslint && npm run jest-clear-cache && npm run jest && npm run docs",
+    "clean": "/bin/rm -rf ./dist",
+    "prebuild": "yarn clean",
+    "build": "tsc -p ./tsconfig.build.json && tsc -p ./tsconfig.build-es6.json && ts-node scripts/build",
+    "postbuild": "prettier --loglevel=silent --write \"./dist/**/*.ts\"",
+    "prepublishOnly": "ts-node scripts/pre-publish",
+    "release": "yarn build && ts-node scripts/release"
+  },
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.0",
+    "@types/lodash": "^4.14.168",
+    "del": "^6.0.0",
+    "lodash": "^4.17.21",
+    "mjml": "4.9.1",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
