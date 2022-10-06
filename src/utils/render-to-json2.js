@@ -1,6 +1,6 @@
 import React from "react";
-import ReactReconciler from "react-reconciler";
 import ReactDOMServer from "react-dom/server";
+import ReactReconciler from "react-reconciler";
 
 import { noop, escapeTextForBrowser, trimContent } from "./render-utils";
 
