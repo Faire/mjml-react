@@ -1,5 +1,6 @@
-import React from "react";
-import { expect } from "chai";
+import React from 'react';
+import { expect } from 'chai';
+import mjml2json from 'mjml2json';
 
 import {
   renderToJSON,
@@ -16,14 +17,14 @@ import {
   MjmlHead,
   MjmlButton,
   renderToMjml,
-} from "../src";
+} from '../src';
 
 import {
   MjmlComment,
   MjmlConditionalComment,
   MjmlTrackingPixel,
   MjmlYahooStyle,
-} from "../extensions";
+} from '../extensions';
 
 const useCases = [
   <Mjml />,
@@ -40,25 +41,25 @@ const useCases = [
     </MjmlRaw>
   </Mjml>,
 
-  <Mjml>{"<b />"}</Mjml>,
+  <Mjml>{'<b />'}</Mjml>,
 
   <Mjml>
     <MjmlHead>
-      <MjmlStyle>{".class {color: red;}"}</MjmlStyle>
+      <MjmlStyle>{'.class {color: red;}'}</MjmlStyle>
     </MjmlHead>
   </Mjml>,
 
   <Mjml>
     <MjmlBody>
       <MjmlRaw>
-        <div>{"<b/>"}</div>
+        <div>{'<b/>'}</div>
         <p>hello &apos; &amp; world </p>
       </MjmlRaw>
     </MjmlBody>
   </Mjml>,
 
   <MjmlRaw>
-    <div dangerouslySetInnerHTML={{ __html: "<div>Hello World!</div>" }}></div>
+    <div dangerouslySetInnerHTML={{ __html: '<div>Hello World!</div>' }}></div>
   </MjmlRaw>,
 
   <Mjml>
@@ -79,7 +80,7 @@ const useCases = [
 
   <MjmlConditionalComment>content</MjmlConditionalComment>,
 
-  <MjmlComment>{"<div />"}</MjmlComment>,
+  <MjmlComment>{'<div />'}</MjmlComment>,
 
   <MjmlTrackingPixel src="https://somedomain.com/somepic.png" />,
 
@@ -92,7 +93,7 @@ const useCases = [
   <MjmlImage alt="<div>&amp;content</div>" />,
 
   <MjmlButton>
-    <div dangerouslySetInnerHTML={{ __html: "<div>Hello World!</div>" }}></div>
+    <div dangerouslySetInnerHTML={{ __html: '<div>Hello World!</div>' }}></div>
   </MjmlButton>,
 
   <MjmlComment>{'<b /> & $ " '}</MjmlComment>,
@@ -105,7 +106,7 @@ const useCases = [
     spaceFromRight="right  "
     spaceInBetween="  in  between  "
   >
-    {"  "}Hello World ! <span> Hello World ! </span>{" "}
+    {'  '}Hello World ! <span> Hello World ! </span>{' '}
   </MjmlButton>,
 
   <MjmlRaw>
@@ -115,14 +116,14 @@ const useCases = [
   </MjmlRaw>,
 ];
 
-// useCases.forEach((tree, i) => {
-//   it(`should render usecase ${i}`, () => {
-//     const mjml = renderToMjml(tree);
-//     const base = mjml2json(mjml);
-//     expect(renderToJSON(tree)).to.eql();
-//     expect(renderToJSON2(tree)).to.eql();
-//   });
-// });
+useCases.forEach((tree, i) => {
+  it(`should render usecase ${i}`, () => {
+    const mjml = renderToMjml(tree);
+    const base = mjml2json(mjml);
+    expect(base).to.eql(renderToJSON(tree));
+    expect(base).to.eql(renderToJSON2(tree));
+  });
+});
 
 // it('measure times', () => {
 //   const n = 10000;
