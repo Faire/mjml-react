@@ -256,8 +256,9 @@ for (const mjmlElementName of MJML_ELEMENTS_TO_CONVERT) {
 }
 
 // create index export file for mjml-react components
+const INDEX_FILE = path.join(MJML_REACT_DIR, `index.tsx`);
 fs.writeFileSync(
-  path.join(MJML_REACT_DIR, `index.tsx`),
+  INDEX_FILE,
   `
 ${GENERATED_HEADER_TSX}
 
@@ -286,4 +287,6 @@ ${gitAttributes}
 `
 );
 
-require("child_process").execSync(`yarn prettier --write ${MJML_REACT_DIR}`);
+require("child_process").execSync(
+  `yarn prettier --write ${GENERATED_MJML_FILES} ${INDEX_FILE}`
+);
