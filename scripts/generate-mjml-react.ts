@@ -38,7 +38,7 @@ const MJML_COMPONENTS_TO_CONVERT = [
   ...PRESET_CORE_COMPONENTS,
 ];
 
-const mjmlcomponentNames = MJML_COMPONENTS_TO_CONVERT.map(
+const MJML_COMPONENT_NAMES = MJML_COMPONENTS_TO_CONVERT.map(
   (component) => component.componentName
 );
 
@@ -61,7 +61,7 @@ const ATTRIBUTES_TO_USE_CSSProperties_WITH = new Set([
 ]);
 
 const HAS_CSS_CLASS = new Set(
-  mjmlcomponentNames.filter(
+  MJML_COMPONENT_NAMES.filter(
     (element) =>
       !["mjml", "mj-style", "mj-class", "mj-breakpoint", "mj-include"].includes(
         element
@@ -70,7 +70,7 @@ const HAS_CSS_CLASS = new Set(
 );
 
 const HAS_CHILDREN = new Set(
-  mjmlcomponentNames.filter(
+  MJML_COMPONENT_NAMES.filter(
     (element) =>
       ![
         "mj-all",
@@ -85,7 +85,7 @@ const HAS_CHILDREN = new Set(
 );
 
 const ALLOW_ANY_PROPERTY = new Set(
-  mjmlcomponentNames.filter((element) =>
+  MJML_COMPONENT_NAMES.filter((element) =>
     ["mj-class", "mj-all"].includes(element)
   )
 );
