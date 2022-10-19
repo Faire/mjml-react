@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 
-export class MjmlHtml extends Component {
+interface IMjmlHtml {
+  tag: string;
+  html: string;
+}
+
+export class MjmlHtml extends Component<IMjmlHtml> {
   render() {
     const { tag, html } = this.props;
     return React.createElement(tag || "mj-raw", {
