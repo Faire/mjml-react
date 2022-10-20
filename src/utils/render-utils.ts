@@ -1,6 +1,8 @@
+import React from "react";
+
 const matchHtmlRegExp = /["'&<>$]/;
 
-export function escapeHtml(string) {
+export function escapeHtml(string: string) {
   const str = "" + string;
   const match = matchHtmlRegExp.exec(str);
 
@@ -48,7 +50,7 @@ export function escapeHtml(string) {
   return lastIndex !== index ? html + str.substring(lastIndex, index) : html;
 }
 
-export function escapeTextForBrowser(text) {
+export function escapeTextForBrowser(text: string | boolean | number) {
   if (typeof text === "boolean" || typeof text === "number") {
     return "" + text;
   }
@@ -57,6 +59,7 @@ export function escapeTextForBrowser(text) {
 
 export function noop() {}
 
+// @ts-expect-error FIXME(implicitAny)
 export function trimContent(child) {
   if (child.content) {
     child.content = child.content.trim();
