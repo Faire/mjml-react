@@ -31,14 +31,14 @@ const PRESET_CORE_COMPONENTS: Array<IMjmlComponent> =
   require("mjml-preset-core").components;
 const OTHER_SUPPORTED_COMPONENTS = ["mjml", "mj-all", "mj-class", "mj-include"];
 
-const MJML_COMPONENTS_TO_CONVERT = [
+const MJML_COMPONENTS_TO_GENERATE = [
   ...OTHER_SUPPORTED_COMPONENTS.map(
     (componentName) => ({ componentName } as IMjmlComponent)
   ),
   ...PRESET_CORE_COMPONENTS,
 ];
 
-const MJML_COMPONENT_NAMES = MJML_COMPONENTS_TO_CONVERT.map(
+const MJML_COMPONENT_NAMES = MJML_COMPONENTS_TO_GENERATE.map(
   (component) => component.componentName
 );
 
@@ -238,7 +238,7 @@ del.sync(GENERATED_MJML_FILES);
 fs.mkdirSync(GENERATED_MJML_FILES);
 
 // create mjml-react components
-for (const mjmlComponent of MJML_COMPONENTS_TO_CONVERT) {
+for (const mjmlComponent of MJML_COMPONENTS_TO_GENERATE) {
   const { componentName } = mjmlComponent;
   const mjmlPackageName = componentName.replace("mj-", "mjml-");
   const reactName = upperFirst(camelCase(mjmlPackageName));
@@ -259,7 +259,7 @@ fs.writeFileSync(
   `
 ${GENERATED_HEADER_TSX}
 
-${MJML_COMPONENTS_TO_CONVERT.map(({ componentName }) => {
+${MJML_COMPONENTS_TO_GENERATE.map(({ componentName }) => {
   const mjmlPackageName = componentName.replace("mj-", "mjml-");
   const reactName = upperFirst(camelCase(mjmlPackageName));
   return `export { ${reactName} } from './mjml/${reactName}';
@@ -269,7 +269,7 @@ export type { I${reactName}Props } from './mjml/${reactName}';`;
 );
 
 // generate gitattributes file
-const gitAttributes = MJML_COMPONENTS_TO_CONVERT.map(({ componentName }) => {
+const gitAttributes = MJML_COMPONENTS_TO_GENERATE.map(({ componentName }) => {
   const mjmlPackageName = componentName.replace("mj-", "mjml-");
   const reactName = upperFirst(camelCase(mjmlPackageName));
   return `${reactName}.tsx  linguist-generated`;
