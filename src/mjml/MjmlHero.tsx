@@ -4,7 +4,12 @@
  */
 import React from "react";
 
-import { convertPropsToMjmlAttributes } from "../utils";
+import {
+  convertPropsToMjmlAttributes,
+  Matrix,
+  Pixel,
+  Percentage,
+} from "../utils";
 
 export interface IMjmlHeroProps {
   mode?: string;
@@ -16,12 +21,12 @@ export interface IMjmlHeroProps {
   borderRadius?: React.CSSProperties["borderRadius"];
   containerBackgroundColor?: string;
   innerBackgroundColor?: string;
-  innerPadding?: string | number;
+  innerPadding?: Matrix<Pixel | Percentage>;
   innerPaddingTop?: string | number;
   innerPaddingLeft?: string | number;
   innerPaddingRight?: string | number;
   innerPaddingBottom?: string | number;
-  padding?: string | number;
+  padding?: Matrix<Pixel | Percentage>;
   paddingBottom?: string | number;
   paddingLeft?: string | number;
   paddingRight?: string | number;

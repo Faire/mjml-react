@@ -4,7 +4,12 @@
  */
 import React from "react";
 
-import { convertPropsToMjmlAttributes } from "../utils";
+import {
+  convertPropsToMjmlAttributes,
+  Matrix,
+  Pixel,
+  Percentage,
+} from "../utils";
 
 export interface IMjmlImageProps {
   alt?: string;
@@ -24,7 +29,7 @@ export interface IMjmlImageProps {
   borderRadius?: React.CSSProperties["borderRadius"];
   containerBackgroundColor?: string;
   fluidOnMobile?: boolean;
-  padding?: string | number;
+  padding?: Matrix<Pixel | Percentage>;
   paddingBottom?: string | number;
   paddingLeft?: string | number;
   paddingRight?: string | number;

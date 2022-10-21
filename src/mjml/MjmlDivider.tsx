@@ -4,14 +4,19 @@
  */
 import React from "react";
 
-import { convertPropsToMjmlAttributes } from "../utils";
+import {
+  convertPropsToMjmlAttributes,
+  Matrix,
+  Pixel,
+  Percentage,
+} from "../utils";
 
 export interface IMjmlDividerProps {
   borderColor?: React.CSSProperties["borderColor"];
   borderStyle?: React.CSSProperties["borderStyle"];
   borderWidth?: string | number;
   containerBackgroundColor?: string;
-  padding?: string | number;
+  padding?: Matrix<Pixel | Percentage>;
   paddingBottom?: string | number;
   paddingLeft?: string | number;
   paddingRight?: string | number;

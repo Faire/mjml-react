@@ -4,7 +4,12 @@
  */
 import React from "react";
 
-import { convertPropsToMjmlAttributes } from "../utils";
+import {
+  convertPropsToMjmlAttributes,
+  Matrix,
+  Pixel,
+  Percentage,
+} from "../utils";
 
 export interface IMjmlSocialProps {
   align?: "left" | "right" | "center";
@@ -17,17 +22,17 @@ export interface IMjmlSocialProps {
   fontWeight?: string;
   iconSize?: string | number;
   iconHeight?: string | number;
-  iconPadding?: string | number;
-  innerPadding?: string | number;
+  iconPadding?: Matrix<Pixel | Percentage>;
+  innerPadding?: Matrix<Pixel | Percentage>;
   lineHeight?: string | number;
   mode?: "horizontal" | "vertical";
   paddingBottom?: string | number;
   paddingLeft?: string | number;
   paddingRight?: string | number;
   paddingTop?: string | number;
-  padding?: string | number;
+  padding?: Matrix<Pixel | Percentage>;
   tableLayout?: "auto" | "fixed";
-  textPadding?: string | number;
+  textPadding?: Matrix<Pixel | Percentage>;
   textDecoration?: React.CSSProperties["textDecoration"];
   verticalAlign?: React.CSSProperties["verticalAlign"];
   className?: string;

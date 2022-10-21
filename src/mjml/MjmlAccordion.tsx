@@ -4,7 +4,12 @@
  */
 import React from "react";
 
-import { convertPropsToMjmlAttributes } from "../utils";
+import {
+  convertPropsToMjmlAttributes,
+  Matrix,
+  Pixel,
+  Percentage,
+} from "../utils";
 
 export interface IMjmlAccordionProps {
   containerBackgroundColor?: string;
@@ -22,7 +27,7 @@ export interface IMjmlAccordionProps {
   paddingLeft?: string | number;
   paddingRight?: string | number;
   paddingTop?: string | number;
-  padding?: string | number;
+  padding?: Matrix<Pixel | Percentage>;
   className?: string;
   cssClass?: string;
   mjmlClass?: string;

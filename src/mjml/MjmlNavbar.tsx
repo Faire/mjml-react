@@ -4,7 +4,12 @@
  */
 import React from "react";
 
-import { convertPropsToMjmlAttributes } from "../utils";
+import {
+  convertPropsToMjmlAttributes,
+  Matrix,
+  Pixel,
+  Percentage,
+} from "../utils";
 
 export interface IMjmlNavbarProps {
   align?: "left" | "center" | "right";
@@ -17,12 +22,12 @@ export interface IMjmlNavbarProps {
   icoFontSize?: string | number;
   icoFontFamily?: string;
   icoTextTransform?: string;
-  icoPadding?: string | number;
+  icoPadding?: Matrix<Pixel | Percentage>;
   icoPaddingLeft?: string | number;
   icoPaddingTop?: string | number;
   icoPaddingRight?: string | number;
   icoPaddingBottom?: string | number;
-  padding?: string | number;
+  padding?: Matrix<Pixel | Percentage>;
   paddingLeft?: string | number;
   paddingTop?: string | number;
   paddingRight?: string | number;

@@ -4,7 +4,12 @@
  */
 import React from "react";
 
-import { convertPropsToMjmlAttributes } from "../utils";
+import {
+  convertPropsToMjmlAttributes,
+  Matrix,
+  Pixel,
+  Percentage,
+} from "../utils";
 
 export interface IMjmlButtonProps {
   align?: "left" | "center" | "right";
@@ -25,14 +30,14 @@ export interface IMjmlButtonProps {
   href?: string;
   name?: string;
   title?: string;
-  innerPadding?: string | number;
+  innerPadding?: Matrix<Pixel | Percentage>;
   letterSpacing?: string | number;
   lineHeight?: string | number;
   paddingBottom?: string | number;
   paddingLeft?: string | number;
   paddingRight?: string | number;
   paddingTop?: string | number;
-  padding?: string | number;
+  padding?: Matrix<Pixel | Percentage>;
   rel?: string;
   target?: string;
   textDecoration?: React.CSSProperties["textDecoration"];

@@ -4,7 +4,12 @@
  */
 import React from "react";
 
-import { convertPropsToMjmlAttributes } from "../utils";
+import {
+  convertPropsToMjmlAttributes,
+  Matrix,
+  Pixel,
+  Percentage,
+} from "../utils";
 
 export interface IMjmlCarouselProps {
   align?: "left" | "center" | "right";
@@ -12,7 +17,7 @@ export interface IMjmlCarouselProps {
   containerBackgroundColor?: string;
   iconWidth?: string | number;
   leftIcon?: string;
-  padding?: string | number;
+  padding?: Matrix<Pixel | Percentage>;
   paddingTop?: string | number;
   paddingBottom?: string | number;
   paddingLeft?: string | number;
