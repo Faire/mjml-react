@@ -14,14 +14,14 @@ import {
 export interface IMjmlDividerProps {
   borderColor?: React.CSSProperties["borderColor"];
   borderStyle?: React.CSSProperties["borderStyle"];
-  borderWidth?: string | number;
+  borderWidth?: Pixel;
   containerBackgroundColor?: string;
   padding?: Matrix<Pixel | Percentage>;
-  paddingBottom?: string | number;
-  paddingLeft?: string | number;
-  paddingRight?: string | number;
-  paddingTop?: string | number;
-  width?: string | number;
+  paddingBottom?: Pixel | Percentage;
+  paddingLeft?: Pixel | Percentage;
+  paddingRight?: Pixel | Percentage;
+  paddingTop?: Pixel | Percentage;
+  width?: Pixel | Percentage;
   align?: "left" | "center" | "right";
   className?: string;
   cssClass?: string;

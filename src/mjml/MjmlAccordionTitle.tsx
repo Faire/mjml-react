@@ -14,12 +14,12 @@ import {
 export interface IMjmlAccordionTitleProps {
   backgroundColor?: React.CSSProperties["backgroundColor"];
   color?: React.CSSProperties["color"];
-  fontSize?: string | number;
+  fontSize?: Pixel;
   fontFamily?: string;
-  paddingBottom?: string | number;
-  paddingLeft?: string | number;
-  paddingRight?: string | number;
-  paddingTop?: string | number;
+  paddingBottom?: Pixel | Percentage;
+  paddingLeft?: Pixel | Percentage;
+  paddingRight?: Pixel | Percentage;
+  paddingTop?: Pixel | Percentage;
   padding?: Matrix<Pixel | Percentage>;
   className?: string;
   cssClass?: string;

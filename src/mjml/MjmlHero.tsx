@@ -13,24 +13,24 @@ import {
 
 export interface IMjmlHeroProps {
   mode?: string;
-  height?: string | number;
+  height?: Pixel | Percentage;
   backgroundUrl?: string;
-  backgroundWidth?: string | number;
-  backgroundHeight?: string | number;
+  backgroundWidth?: Pixel | Percentage;
+  backgroundHeight?: Pixel | Percentage;
   backgroundPosition?: React.CSSProperties["backgroundPosition"];
   borderRadius?: React.CSSProperties["borderRadius"];
   containerBackgroundColor?: string;
   innerBackgroundColor?: string;
   innerPadding?: Matrix<Pixel | Percentage>;
-  innerPaddingTop?: string | number;
-  innerPaddingLeft?: string | number;
-  innerPaddingRight?: string | number;
-  innerPaddingBottom?: string | number;
+  innerPaddingTop?: Pixel | Percentage;
+  innerPaddingLeft?: Pixel | Percentage;
+  innerPaddingRight?: Pixel | Percentage;
+  innerPaddingBottom?: Pixel | Percentage;
   padding?: Matrix<Pixel | Percentage>;
-  paddingBottom?: string | number;
-  paddingLeft?: string | number;
-  paddingRight?: string | number;
-  paddingTop?: string | number;
+  paddingBottom?: Pixel | Percentage;
+  paddingLeft?: Pixel | Percentage;
+  paddingRight?: Pixel | Percentage;
+  paddingTop?: Pixel | Percentage;
   backgroundColor?: React.CSSProperties["backgroundColor"];
   verticalAlign?: React.CSSProperties["verticalAlign"];
   className?: string;

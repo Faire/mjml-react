@@ -103,13 +103,13 @@ function getPropTypeFromMjmlAttributeType(
     return `React.CSSProperties["${attribute}"]`;
   }
   if (mjmlAttributeType.startsWith("unit")) {
-    if (!mjmlAttributeType.endsWith("{1,4}")) {
-      return "string | number";
-    }
     const validUnitTypes: string[] = Object.keys(typeToUnit).filter((type) =>
       mjmlAttributeType.includes(typeToUnit[type as keyof typeof typeToUnit])
     );
-    return `Matrix<${validUnitTypes.join(" | ")}>`;
+    if (mjmlAttributeType.endsWith("{1,4}")) {
+      return `Matrix<${validUnitTypes.join(" | ")}>`;
+    }
+    return validUnitTypes.join(" | ");
   }
   if (mjmlAttributeType === "boolean") {
     return "boolean";

@@ -18,12 +18,12 @@ export interface IMjmlSpacerProps {
   borderRight?: string;
   borderTop?: string;
   containerBackgroundColor?: string;
-  paddingBottom?: string | number;
-  paddingLeft?: string | number;
-  paddingRight?: string | number;
-  paddingTop?: string | number;
+  paddingBottom?: Pixel | Percentage;
+  paddingLeft?: Pixel | Percentage;
+  paddingRight?: Pixel | Percentage;
+  paddingTop?: Pixel | Percentage;
   padding?: Matrix<Pixel | Percentage>;
-  height?: string | number;
+  height?: Pixel | Percentage;
   className?: string;
   cssClass?: string;
   mjmlClass?: string;

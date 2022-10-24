@@ -28,10 +28,10 @@ export interface IMjmlWrapperProps {
   direction?: "ltr" | "rtl";
   fullWidth?: boolean;
   padding?: Matrix<Pixel | Percentage>;
-  paddingTop?: string | number;
-  paddingBottom?: string | number;
-  paddingLeft?: string | number;
-  paddingRight?: string | number;
+  paddingTop?: Pixel | Percentage;
+  paddingBottom?: Pixel | Percentage;
+  paddingLeft?: Pixel | Percentage;
+  paddingRight?: Pixel | Percentage;
   textAlign?: React.CSSProperties["textAlign"];
   textPadding?: Matrix<Pixel | Percentage>;
   className?: string;
