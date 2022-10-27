@@ -17,6 +17,7 @@ const MJML_REACT_DIR = "src";
 
 const GENERATED_HEADER_TSX = `
 /*
+ * this line should be cause \`Validate generate-mjml-react.ts has been run\` to fail
  * This file is generated. Don't edit it directly.
  * Modify \`scripts/generate-mjml-react.ts\` to make changes to these files
  */
