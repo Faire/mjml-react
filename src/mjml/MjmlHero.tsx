@@ -12,14 +12,21 @@ import {
 } from "../utils";
 
 export interface IMjmlHeroProps {
-  /** MJML default value: fixed-height */
+  /** choose if the height is fixed based on the height attribute or fluid
+   * MJML default value: fixed-height */
   mode?: string;
-  /** MJML default value: 0px */
+  /** hero section height (required for fixed-height mode)
+   * MJML default value: 0px */
   height?: Pixel | Percentage;
+  /** absolute background url */
   backgroundUrl?: string;
+  /** width of the image used, mandatory */
   backgroundWidth?: Pixel | Percentage;
+  /** height of the image used, mandatory */
   backgroundHeight?: Pixel | Percentage;
+  /** background image position */
   backgroundPosition?: React.CSSProperties["backgroundPosition"];
+  /** border radius */
   borderRadius?: React.CSSProperties["borderRadius"];
   containerBackgroundColor?: string;
   innerBackgroundColor?: string;
@@ -28,13 +35,20 @@ export interface IMjmlHeroProps {
   innerPaddingLeft?: Pixel | Percentage;
   innerPaddingRight?: Pixel | Percentage;
   innerPaddingBottom?: Pixel | Percentage;
-  /** MJML default value: 0px */
+  /** supports up to 4 parameters
+   * MJML default value: 0px */
   padding?: Matrix<Pixel | Percentage>;
+  /** bottom offset */
   paddingBottom?: Pixel | Percentage;
+  /** left offset */
   paddingLeft?: Pixel | Percentage;
+  /** right offset */
   paddingRight?: Pixel | Percentage;
+  /** top offset */
   paddingTop?: Pixel | Percentage;
+  /** hero background color */
   backgroundColor?: React.CSSProperties["backgroundColor"];
+  /** content vertical alignment */
   verticalAlign?: React.CSSProperties["verticalAlign"];
   className?: string;
   cssClass?: string;

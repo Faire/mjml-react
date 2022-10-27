@@ -12,18 +12,29 @@ import {
 } from "../utils";
 
 export interface IMjmlCarouselImageProps {
+  /** image description */
   alt?: string;
+  /** link to redirect to on click */
   href?: string;
+  /** specify the rel attribute */
   rel?: string;
-  /** MJML default value: _blank */
+  /** link target on click
+   * MJML default value: _blank */
   target?: string;
+  /** tooltip &amp; accessibility */
   title?: string;
+  /** image source */
   src?: string;
+  /** image source to have a thumbnail different than the image it&#39;s linked to */
   thumbnailsSrc?: string;
+  /** border radius */
   borderRadius?: React.CSSProperties["borderRadius"];
+  /** border of the thumbnails */
   tbBorder?: string;
+  /** border-radius of the thumbnails */
   tbBorderRadius?: Matrix<Pixel | Percentage>;
   className?: string;
+  /** class name, added to the root HTML element created */
   cssClass?: string;
   mjmlClass?: string;
   children?: React.ReactNode;

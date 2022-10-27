@@ -7,18 +7,30 @@ import React from "react";
 import { convertPropsToMjmlAttributes, Pixel, Percentage } from "../utils";
 
 export interface IMjmlAccordionElementProps {
+  /** background color */
   backgroundColor?: React.CSSProperties["backgroundColor"];
+  /** CSS border format */
   border?: React.CSSProperties["border"];
+  /** font */
   fontFamily?: string;
+  /** icon alignment */
   iconAlign?: "top" | "middle" | "bottom";
+  /** icon height */
   iconWidth?: Pixel | Percentage;
+  /** icon width */
   iconHeight?: Pixel | Percentage;
+  /** icon when accordion is wrapped */
   iconWrappedUrl?: string;
+  /** alt text when accordion is wrapped */
   iconWrappedAlt?: string;
+  /** icon when accordion is unwrapped */
   iconUnwrappedUrl?: string;
+  /** alt text when accordion is unwrapped */
   iconUnwrappedAlt?: string;
+  /** display icon left or right */
   iconPosition?: "left" | "right";
   className?: string;
+  /** class name, added to the root HTML element created */
   cssClass?: string;
   mjmlClass?: string;
   children?: React.ReactNode;

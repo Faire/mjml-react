@@ -12,21 +12,33 @@ import {
 } from "../utils";
 
 export interface IMjmlDividerProps {
+  /** divider color */
   borderColor?: React.CSSProperties["borderColor"];
+  /** dashed/dotted/solid */
   borderStyle?: React.CSSProperties["borderStyle"];
+  /** divider&#39;s border width */
   borderWidth?: Pixel;
+  /** inner element background color */
   containerBackgroundColor?: string;
-  /** MJML default value: 10px 25px */
+  /** supports up to 4 parameters
+   * MJML default value: 10px 25px */
   padding?: Matrix<Pixel | Percentage>;
+  /** bottom offset */
   paddingBottom?: Pixel | Percentage;
+  /** left offset */
   paddingLeft?: Pixel | Percentage;
+  /** right offset */
   paddingRight?: Pixel | Percentage;
+  /** top offset */
   paddingTop?: Pixel | Percentage;
-  /** MJML default value: 100% */
+  /** divider width
+   * MJML default value: 100% */
   width?: Pixel | Percentage;
-  /** MJML default value: center */
+  /** alignment
+   * MJML default value: center */
   align?: "left" | "center" | "right";
   className?: string;
+  /** class name, added to the root HTML element created */
   cssClass?: string;
   mjmlClass?: string;
 }

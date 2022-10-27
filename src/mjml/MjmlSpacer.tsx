@@ -17,15 +17,23 @@ export interface IMjmlSpacerProps {
   borderLeft?: string;
   borderRight?: string;
   borderTop?: string;
+  /** inner element background color */
   containerBackgroundColor?: string;
+  /** bottom offset */
   paddingBottom?: Pixel | Percentage;
+  /** left offset */
   paddingLeft?: Pixel | Percentage;
+  /** right offset */
   paddingRight?: Pixel | Percentage;
+  /** top offset */
   paddingTop?: Pixel | Percentage;
+  /** supports up to 4 parameters */
   padding?: Matrix<Pixel | Percentage>;
-  /** MJML default value: 20px */
+  /** spacer height
+   * MJML default value: 20px */
   height?: Pixel | Percentage;
   className?: string;
+  /** class name, added to the root HTML element created */
   cssClass?: string;
   mjmlClass?: string;
 }

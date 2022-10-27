@@ -924,6 +924,13 @@
   dependencies:
     "@types/lodash" "*"
 
+"@types/lodash.chunk@^4.2.7":
+  version "4.2.7"
+  resolved "https://verdaccio.faire.team/@types%2flodash.chunk/-/lodash.chunk-4.2.7.tgz#df52478072f0673d9fe8d3dd43af8f490d07a56a"
+  integrity sha512-//tmaWHiANgToom/YYYKKqiCtlNz11fwYtMUUbaemNSbWTI+2zHtYW5nt1PHNCRWHPAJHHhn4UVFD9LKUFvatA==
+  dependencies:
+    "@types/lodash" "*"
+
 "@types/lodash.kebabcase@^4.1.7":
   version "4.1.7"
   resolved "https://registry.npmjs.org/@types/lodash.kebabcase/-/lodash.kebabcase-4.1.7.tgz#eb2d1162c669ecbc77f9912a31e952563848deff"
@@ -942,6 +949,11 @@
   version "4.14.186"
   resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.186.tgz#862e5514dd7bd66ada6c70ee5fce844b06c8ee97"
   integrity sha512-eHcVlLXP0c2FlMPm56ITode2AgLMSa6aJ05JTTbYbI+7EMkCEE5qk2E41d5g2lCVTqRe0GnnRFurmlCsDODrPw==
+
+"@types/marked@^4.0.7":
+  version "4.0.7"
+  resolved "https://verdaccio.faire.team/@types%2fmarked/-/marked-4.0.7.tgz#400a76809fd08c2bbd9e25f3be06ea38c8e0a1d3"
+  integrity sha512-eEAhnz21CwvKVW+YvRvcTuFKNU9CV1qH+opcgVK3pIMI6YZzDm6gc8o2vHjldFk6MGKt5pueSB7IOpvpx5Qekw==
 
 "@types/minimatch@^3.0.3":
   version "3.0.5"
@@ -3345,6 +3357,11 @@ lodash.camelcase@^4.3.0:
   resolved "https://registry.npmjs.org/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
   integrity sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==
 
+lodash.chunk@^4.2.0:
+  version "4.2.0"
+  resolved "https://verdaccio.faire.team/lodash.chunk/-/lodash.chunk-4.2.0.tgz#66e5ce1f76ed27b4303d8c6512e8d1216e8106bc"
+  integrity sha1-ZuXOH3btJ7QwPYxlEujRIW6BBrw=
+
 lodash.kebabcase@^4.1.1:
   version "4.1.1"
   resolved "https://registry.npmjs.org/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
@@ -3420,6 +3437,11 @@ makeerror@1.0.12:
   integrity sha512-JmqCvUhmt43madlpFzG4BQzG2Z3m6tvQDNKdClZnO3VbIudJYmxsT0FNJMeiB2+JTSlTQTSbU8QdesVmwJcmLg==
   dependencies:
     tmpl "1.0.5"
+
+marked@^4.1.1:
+  version "4.1.1"
+  resolved "https://verdaccio.faire.team/marked/-/marked-4.1.1.tgz#2f709a4462abf65a283f2453dc1c42ab177d302e"
+  integrity sha512-0cNMnTcUJPxbA6uWmCmjWz4NJRe/0Xfk2NhXCUHjew9qJzFN20krFnsUe7QynwqOwa5m1fZ4UDg0ycKFVC0ccw==
 
 mensch@^0.3.4:
   version "0.3.4"

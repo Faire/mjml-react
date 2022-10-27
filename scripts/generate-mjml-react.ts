@@ -13,6 +13,8 @@ import * as path from "path";
 
 import { typeToUnit } from "../src/utils";
 
+import { getTypeStrings } from "./helpers/getTypeStrings";
+
 const MJML_REACT_DIR = "src";
 
 const GENERATED_HEADER_TSX = `
@@ -179,17 +181,10 @@ function buildTypesForComponent(mjmlComponent: IMjmlComponent): string {
     typesFromMjmlAttributes["dangerouslySetInnerHTML"] = "{ __html: string }";
   }
 
-  const typeStrings = Object.entries(typesFromMjmlAttributes).map(
-    ([attributes, type]) => {
-      const definition = `${attributes}?: ${type}`;
-      const defaultValue =
-        defaultAttributes && attributes in defaultAttributes
-          ? defaultAttributes[attributes]
-          : undefined;
-      return defaultValue
-        ? `/** MJML default value: ${defaultValue} */\n${definition}`
-        : definition;
-    }
+  const typeStrings = getTypeStrings(
+    componentName,
+    typesFromMjmlAttributes,
+    defaultAttributes
   );
 
   // allow any property

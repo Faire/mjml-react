@@ -7,10 +7,13 @@ import React from "react";
 import { convertPropsToMjmlAttributes, Pixel } from "../utils";
 
 export interface IMjmlBodyProps {
-  /** MJML default value: 600px */
+  /** email&#39;s width
+   * MJML default value: 600px */
   width?: Pixel;
+  /** the general background color */
   backgroundColor?: React.CSSProperties["backgroundColor"];
   className?: string;
+  /** class name, added to the root HTML element created */
   cssClass?: string;
   mjmlClass?: string;
   children?: React.ReactNode;

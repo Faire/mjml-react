@@ -12,17 +12,27 @@ import {
 } from "../utils";
 
 export interface IMjmlAccordionTitleProps {
+  /** background color */
   backgroundColor?: React.CSSProperties["backgroundColor"];
+  /** text color */
   color?: React.CSSProperties["color"];
+  /** font size */
   fontSize?: Pixel;
+  /** font */
   fontFamily?: string;
+  /** padding bottom */
   paddingBottom?: Pixel | Percentage;
+  /** padding left */
   paddingLeft?: Pixel | Percentage;
+  /** padding right */
   paddingRight?: Pixel | Percentage;
+  /** padding top */
   paddingTop?: Pixel | Percentage;
-  /** MJML default value: 16px */
+  /** padding
+   * MJML default value: 16px */
   padding?: Matrix<Pixel | Percentage>;
   className?: string;
+  /** class name, added to the root HTML element created */
   cssClass?: string;
   mjmlClass?: string;
   children?: React.ReactNode;
