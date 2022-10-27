@@ -27,7 +27,7 @@ jobs:
         run: yarn test
       - name: Validate generate-mjml-react.ts has been run
         run: |
-          node --require ts-node/register scripts/generate-mjml-react.ts
+          yarn generate-mjml-react
           result=$(git diff --quiet --exit-code HEAD || echo "fail")
           if [ "$result" == "fail" ]; then
             echo ">>> MJML REACT CHECK FAILED! <<<"
