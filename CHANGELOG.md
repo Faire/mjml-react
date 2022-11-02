@@ -1,3 +1,9 @@
+## [2.1.11](https://github.com/hchiufaire/mjml-react-npm-test/compare/v2.1.10...v2.1.11) (2022-11-02)
+
+### Bug Fixes
+
+- plugins - add git for adding tag, npm for releasing ([eec0f27](https://github.com/hchiufaire/mjml-react-npm-test/commit/eec0f27d8a4b6531fb2bb49592eb90086de64dce))
+
 ## [2.1.10](https://github.com/hchiufaire/mjml-react-npm-test/compare/v2.1.9...v2.1.10) (2022-11-02)
 
 ### Bug Fixes
