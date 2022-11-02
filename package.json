@@ -1,5 +1,5 @@
 {
-  "name": "@faire/mjml-react",
+  "name": "@hchiufaire/mjml-react-npm-test",
   "version": "3.0.0-a1",
   "license": "MIT",
   "description": "React component library to generate the HTML emails on the fly",
@@ -8,14 +8,14 @@
     "mjml",
     "react"
   ],
-  "author": "Ian Edington <IanEdington@gmail.com>",
-  "homepage": "https://github.com/Faire/mjml-react",
+  "author": "H <harrison.chiu@faire.com>",
+  "homepage": "https://github.com/hchiufaire/mjml-react-npm-test",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Faire/mjml-react.git"
+    "url": "git+https://github.com/hchiufaire/mjml-react-npm-test.git"
   },
   "bugs": {
-    "url": "https://github.com/Faire/mjml-react/issues"
+    "url": "https://github.com/hchiufaire/mjml-react-npm-test/issues"
   },
   "main": "dist/src/index.js",
   "files": [
@@ -85,9 +85,12 @@
   "dependencies": {
     "lodash.kebabcase": "^4.1.1"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "release": {
     "branches": [
-      "main",
+      "release",
       {
         "name": "beta",
         "prerelease": true

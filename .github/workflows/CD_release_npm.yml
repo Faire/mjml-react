@@ -3,15 +3,15 @@ name: NPM CD workflow
 on:
   push:
     branches:
-      - main
+      - release
       - beta
       - alpha
 
 jobs:
-  runPostTranslations:
-    uses: ./.github/workflows/CI_PR_merge_checks.yml
+  # runPostTranslations:
+  #   uses: ./.github/workflows/CI_PR_merge_checks.yml
   releaseAndBumpVersion:
-    needs: runPostTranslations
+    # needs: runPostTranslations
     name: Publish the package
     runs-on: ubuntu-latest
 
@@ -26,15 +26,15 @@ jobs:
 
       - name: Configure Github credentials
         run: |
-          git config --global user.name "Github"
-          git config --global user.email "github@faire.com"
+          git config --global user.name "H"
+          git config --global user.email "harrison.chiu@faire.com"
 
       - run: |
           yarn install
           yarn build
 
       - name: Run semantic release (release + bump version)
-        run: npx semantic-release --dry-run
+        run: npx semantic-release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
