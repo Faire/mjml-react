@@ -28,8 +28,7 @@
     "test": "test"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "versionBumpStrategy": "patch"
+    "access": "public"
   },
   "scripts": {
     "build": "/bin/rm -rf dist && yarn build-cjs && yarn build-esm",
@@ -42,6 +41,8 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "@types/html-minifier": "^4.0.2",
     "@types/jest": "^29.1.2",
@@ -85,9 +86,6 @@
   "dependencies": {
     "lodash.kebabcase": "^4.1.1"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "release": {
     "branches": [
       "release",
@@ -99,6 +97,13 @@
         "name": "alpha",
         "prerelease": true
       }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
     ]
   }
 }
