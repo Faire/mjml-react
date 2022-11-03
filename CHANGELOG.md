@@ -1,3 +1,9 @@
+## [2.1.12-alpha.1](https://github.com/hchiufaire/mjml-react-npm-test/compare/v2.1.11...v2.1.12-alpha.1) (2022-11-03)
+
+### Bug Fixes
+
+- testing alpha ([8ec7803](https://github.com/hchiufaire/mjml-react-npm-test/commit/8ec7803d161883110cd0885607a6898d86869921))
+
 ## [2.1.11](https://github.com/hchiufaire/mjml-react-npm-test/compare/v2.1.10...v2.1.11) (2022-11-02)
 
 ### Bug Fixes
