@@ -29,7 +29,7 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
-    "versionBumpStrategy": "patch"
+    "access": "public"
   },
   "scripts": {
     "build": "/bin/rm -rf dist && yarn build-cjs && yarn build-esm",
@@ -44,6 +44,8 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "@types/html-minifier": "^4.0.2",
     "@types/jest": "^29.1.2",
@@ -98,6 +100,19 @@
         "name": "alpha",
         "prerelease": true
       }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
     ]
   }
 }
