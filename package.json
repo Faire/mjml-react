@@ -38,7 +38,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "jest",
-    "test-dist": "jest --config=jest-dist.config.js",
+    "test-dist-skip-build": "jest --config=jest-dist.config.js",
+    "test-dist": "yarn build && yarn test-dist-skip-build",
     "generate-mjml-react": "ts-node scripts/generate-mjml-react.ts",
     "prepare": "husky install"
   },
