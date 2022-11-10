@@ -93,11 +93,11 @@
     "branches": [
       "main",
       {
-        "name": "beta",
+        "name": "main-beta",
         "prerelease": true
       },
       {
-        "name": "alpha",
+        "name": "main-alpha",
         "prerelease": true
       }
     ],

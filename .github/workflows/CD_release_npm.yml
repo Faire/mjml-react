@@ -4,14 +4,14 @@ on:
   push:
     branches:
       - main
-      - beta
-      - alpha
+      - main-beta
+      - main-alpha
 
 jobs:
-  runPostTranslations:
+  runCI:
     uses: ./.github/workflows/CI_PR_merge_checks.yml
   releaseAndBumpVersion:
-    needs: runPostTranslations
+    needs: runCI
     name: Publish the package
     runs-on: ubuntu-latest
 
