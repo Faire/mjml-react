@@ -1,9 +1,11 @@
 name: Run PR checks
 
-on: pull_request
+on:
+  pull_request:
+  workflow_call:
 
 jobs:
-  runPostTranslations:
+  runCI:
     name: CI
     runs-on: ubuntu-latest
     strategy:
