@@ -5,7 +5,7 @@ on:
   workflow_call:
 
 jobs:
-  runPostTranslations:
+  runCI:
     name: CI
     runs-on: ubuntu-latest
     strategy:
