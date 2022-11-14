@@ -6,6 +6,7 @@ on:
       - main
       - main-beta
       - main-alpha
+      - hchiu/use-faire-pr-bot-for-CD
 
 jobs:
   runCI:
@@ -26,15 +27,15 @@ jobs:
 
       - name: Configure Github credentials
         run: |
-          git config --global user.name "Github"
-          git config --global user.email "github@faire.com"
+          git config --global user.name "Faire PR Bot"
+          git config --global user.email "pr-bot@faire.com"
 
       - run: |
           yarn install
           yarn build
 
       - name: Run semantic release (release + bump version)
-        run: npx semantic-release
+        run: npx semantic-release --dry-run
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PR_BOT_GITHUB_TOKEN }}

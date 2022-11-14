@@ -92,6 +92,7 @@
   "release": {
     "branches": [
       "main",
+      "hchiu/use-faire-pr-bot-for-CD",
       {
         "name": "main-beta",
         "prerelease": true
