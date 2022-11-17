@@ -1,6 +1,6 @@
 {
   "name": "@faire/mjml-react",
-  "version": "3.0.0-a1",
+  "version": "3.0.0",
   "license": "MIT",
   "description": "React component library to generate the HTML emails on the fly",
   "keywords": [
@@ -111,7 +111,6 @@
         }
       ],
       "@semantic-release/npm",
-      "@semantic-release/git",
       "@semantic-release/github"
     ]
   }
