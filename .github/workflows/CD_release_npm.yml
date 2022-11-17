@@ -1,11 +1,8 @@
 name: NPM CD workflow
 
 on:
-  push:
-    branches:
-      - main
-      - main-beta
-      - main-alpha
+  pull_request:
+  workflow_call:
 
 jobs:
   releaseAndBumpVersion:
