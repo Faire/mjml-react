@@ -6,7 +6,6 @@ on:
 
 jobs:
   releaseAndBumpVersion:
-    needs: runCI
     name: Publish the package
     runs-on: ubuntu-latest
 
