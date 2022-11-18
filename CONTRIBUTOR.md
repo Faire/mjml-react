@@ -27,6 +27,7 @@ When pull requests are merged, the changes are squashed into one commit which us
 | `fix(pencil): stop graphite breaking when too much pressure applied`                                                                                                                             | ~~Patch~~ Fix Release                                                                                                      |
 | `feat(pencil): add 'graphiteWidth' option`                                                                                                                                                       | ~~Minor~~ Feature Release                                                                                                  |
 | `perf(pencil): remove graphiteWidth option`<br><br>`BREAKING CHANGE: The graphiteWidth option has been removed.`<br>`The default graphite width of 10mm is always used for performance reasons.` | ~~Major~~ Breaking Release <br /> (Note that the `BREAKING CHANGE: ` token must be in the footer/body of the pull request) |
+| `chore(pencil): remove graphiteWidth option`                                                                                                                                                     | No Release (no version update)                                                                                             |
 
 In all cases the scope is optional (i.e. the title `feat: add 'graphiteWidth' option` would still trigger a feature release). Including the flag in the pull request title also allows reviewers to see the extent of outstanding proposals at a glance.
 
@@ -39,11 +40,6 @@ A current beta or alpha version may exist to test multiple fixes simultaneously,
 ## Fixing A Bug
 
 Public bugs are listed on the Github repository [issues page](https://github.com/faire/mjml-react/issues). Before filing a new task, try to make sure your problem doesn't already exist.
-
-<!--
-## Sending a Pull Request
-
-The core team is monitoring for pull requests. We will review your pull request and either merge it, request changes to it, or close it with an explanation. -->
 
 **Before submitting a pull request,** please make sure the following is done:
 
