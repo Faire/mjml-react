@@ -39,7 +39,7 @@ A current beta or alpha version may exist to test multiple fixes simultaneously,
 
 ## Fixing A Bug
 
-Public bugs are listed on the Github repository [issues page](https://github.com/faire/mjml-react/issues). Before filing a new task, try to make sure your problem doesn't already exist.
+Bugs are listed on the Github repository [issues page](https://github.com/faire/mjml-react/issues). Before filing a new task, try to make sure your problem doesn't already exist.
 
 **Before submitting a pull request,** please make sure the following is done:
 
