@@ -2,25 +2,25 @@ Faire/mjml-react is one of [Faire](https://www.faire.com)'s first open source pr
 
 ## Open Development
 
-All work on Mjml-react happens directly on [GitHub](https://github.com/facebook/react). Core team members and external contributors send pull requests which go through the same review process.
+All work on Mjml-react happens directly on [GitHub](https://github.com/Faire/mjml-react). Core team members and external contributors send pull requests which go through similar review processes.
 
 ## Semantic Versioning
 
 Mjml-react follows [semantic versioning](https://semver.org/). We release patch versions for critical bugfixes, minor versions for new features or non-essential changes, and major versions for any breaking changes.
 
-Every tagged change is automatically documented in the [changelog file](CHANGELOG.md) for v3 and beyond. You can also find them on the Github [release log](https://github.com/Faire/mjml-react/releases).
+Every flagged change is automatically documented on the Github [release log](https://github.com/Faire/mjml-react/releases).
 
 ## Release Process
 
-Mjml-react newly uses [@semantic-release](https://www.npmjs.com/package/semantic-release) to automate:
+From v3.0.0 onwards, mjml-react uses [@semantic-release](https://www.npmjs.com/package/semantic-release) to automate:
 
-- determining the next semantic version by analyzing commit messages on a given release branch (see table below on how to tag appropriately)
-- updating the [release log + tags](https://github.com/Faire/mjml-react/releases), changelog file, and current version
+- determining the next semantic version by analyzing commit messages on a given release branch (see table below on how to flag appropriately)
+- updating the [release log + tags](https://github.com/Faire/mjml-react/releases) and current version
 - publishing the next version package to [NPM](https://www.npmjs.com/package/@faire/mjml-react)
 
-This process is triggered via Github actions by pushing to a release branch.
+This process is triggered via Github actions by pushing to a release branch. The next version is determined from the most recent commit with a version tag that corresponds to the branch (i.e. `v3.0.1.` vs. `v.3.0.1-alpha.1`, see more on prereleases in Branch Organization).
 
-When pull requests are merged, the changes are squashed into one commit which uses the pull request title as the message. Thus, in order for the merged code to trigger a version bump and release, <b><u>your pull request title must be formatted in one of the following ways</u></b>:
+When pull requests are merged, the changes are squashed into one commit which uses the pull request title as the default message. In order for the merged code to trigger a version bump and release, <b><u>your pull request title should be formatted in one of the following ways</u></b>:
 
 | Commit message                                                                                                                                                                                   | Release type                                                                                                               |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
@@ -28,21 +28,17 @@ When pull requests are merged, the changes are squashed into one commit which us
 | `feat(pencil): add 'graphiteWidth' option`                                                                                                                                                       | ~~Minor~~ Feature Release                                                                                                  |
 | `perf(pencil): remove graphiteWidth option`<br><br>`BREAKING CHANGE: The graphiteWidth option has been removed.`<br>`The default graphite width of 10mm is always used for performance reasons.` | ~~Major~~ Breaking Release <br /> (Note that the `BREAKING CHANGE: ` token must be in the footer/body of the pull request) |
 
-In all cases the scope is optional (i.e. the title `feat: add 'graphiteWidth' option` would still trigger a feature release). Including the tag in the pull request title also allows reviewers to see the extents of all outstanding proposals at a glance.
+In all cases the scope is optional (i.e. the title `feat: add 'graphiteWidth' option` would still trigger a feature release). Including the flag in the pull request title also allows reviewers to see the extent of outstanding proposals at a glance.
 
-<!-- ## Branch Organization
+### Branch Organization
 
-- main and main version releases
-- prerelease main-alpha/main-beta
-- branch protection??
+In general, pull requests addressing the latest version should target the [`main`](https://github.com/faire/mjml-react/tree/main) branch.
 
-The principle Submit all changes directly to the [`main branch`](https://github.com/faire/mjml-react/tree/main). -->
+A current beta or alpha version may exist to test multiple fixes simultaneously, which are reserved under the branch names `main-beta` and `main-alpha`. Eventually this prerelease branch should be merged into `main` without squashing, after which a single version bump from `main` is determined by the most significant of all commits (patch, minor, major).
 
-## Bugs
+## Fixing A Bug
 
-### Where to Find Known Issues
-
-Public bugs are currently listed on the Github repository [issues page](https://github.com/faire/mjml-react/issues). We keep a close eye on this and try to make it clear when we have an internal fix in progress. Before filing a new task, try to make sure your problem doesn't already exist.
+Public bugs are listed on the Github repository [issues page](https://github.com/faire/mjml-react/issues). Before filing a new task, try to make sure your problem doesn't already exist.
 
 <!--
 ## Sending a Pull Request
@@ -79,15 +75,7 @@ For building and testing:
 - `yarn test-dist` builds and runs the test suite on the `dist/src` folder
 - `yarn test-dist-skip-build` runs the test suite on `dist/src` without building
 
-<!-- ## Style Guide
-
-We use an automatic code formatter called [Prettier](https://prettier.io/).
-Run `yarn prettier` after making any changes to the code.
-
-Then, our linter will catch most issues that may exist in your code.
-You can check the status of your code styling by simply running `yarn linc`.
-
-However, there are still some styles that the linter cannot pick up. If you are unsure about something, looking at [Airbnb's Style Guide](https://github.com/airbnb/javascript) will guide you in the right direction. -->
+As pull requests contributed externally from Faire require approval to have workflows run, <b>please ensure to test locally before pushing</b>.
 
 ## License
 
