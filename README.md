@@ -29,7 +29,6 @@ And afterwards write a code like a pro:
 
 ```js
 import {
-  render,
   Mjml,
   MjmlHead,
   MjmlTitle,
