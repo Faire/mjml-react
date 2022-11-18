@@ -40,6 +40,7 @@ import {
   MjmlButton,
   MjmlImage,
 } from "@faire/mjml-react";
+import { render } from "@faire/mjml-react/dist/src/utils/render";
 
 const { html, errors } = render(
   <Mjml>
