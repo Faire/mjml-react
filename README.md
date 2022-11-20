@@ -29,7 +29,6 @@ And afterwards write a code like a pro:
 
 ```js
 import {
-  render,
   Mjml,
   MjmlHead,
   MjmlTitle,
@@ -40,6 +39,7 @@ import {
   MjmlButton,
   MjmlImage,
 } from "@faire/mjml-react";
+import { render } from "@faire/mjml-react/dist/src/utils/render";
 
 const { html, errors } = render(
   <Mjml>
