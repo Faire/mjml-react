@@ -4,6 +4,8 @@ Mjml.tsx  linguist-generated
 MjmlAll.tsx  linguist-generated
 MjmlClass.tsx  linguist-generated
 MjmlInclude.tsx  linguist-generated
+MjmlHtmlAttribute.tsx  linguist-generated
+MjmlSelector.tsx  linguist-generated
 MjmlBody.tsx  linguist-generated
 MjmlHead.tsx  linguist-generated
 MjmlAttributes.tsx  linguist-generated
