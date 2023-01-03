@@ -70,8 +70,14 @@ const ATTRIBUTES_TO_USE_CSSProperties_WITH = new Set([
 ]);
 
 const TYPE_OVERRIDE: { [componentName: string]: { [prop: string]: string } } = {
+  mjml: { owa: "string", lang: "string" },
+  "mj-style": { inline: "boolean" },
+  "mj-class": { name: "string" },
+  "mj-table": { cellspacing: "string", cellpadding: "string" },
   "mj-selector": { path: "string" },
   "mj-html-attribute": { name: "string" },
+  "mj-include": { path: "string" },
+  "mj-breakpoint": { width: "string" },
 };
 
 const HAS_CSS_CLASS = new Set(
@@ -167,23 +173,6 @@ function buildTypesForComponent(mjmlComponent: IMjmlComponent): string {
         );
       }
     );
-  }
-
-  // TODO: Add these custom component types to TYPE_OVERRIDE
-  if (componentName === "mjml") {
-    typesFromMjmlAttributes["owa"] = "string";
-    typesFromMjmlAttributes["lang"] = "string";
-  } else if (componentName === "mj-style") {
-    typesFromMjmlAttributes["inline"] = "boolean";
-  } else if (componentName === "mj-class") {
-    typesFromMjmlAttributes["name"] = "string";
-  } else if (componentName === "mj-table") {
-    typesFromMjmlAttributes["cellspacing"] = "string";
-    typesFromMjmlAttributes["cellpadding"] = "string";
-  } else if (componentName === "mj-include") {
-    typesFromMjmlAttributes["path"] = "string";
-  } else if (componentName === "mj-breakpoint") {
-    typesFromMjmlAttributes["width"] = "string";
   }
 
   if (HAS_CSS_CLASS.has(componentName)) {

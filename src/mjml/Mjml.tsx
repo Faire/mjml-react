@@ -7,9 +7,9 @@ import React from "react";
 import { convertPropsToMjmlAttributes } from "../utils";
 
 export interface IMjmlProps {
+  children?: React.ReactNode;
   owa?: string;
   lang?: string;
-  children?: React.ReactNode;
 }
 
 export function Mjml({ children, ...props }: IMjmlProps): JSX.Element {
