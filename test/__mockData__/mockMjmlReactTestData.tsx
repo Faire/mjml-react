@@ -38,6 +38,8 @@ const {
   MjmlStyle,
   MjmlTable,
   MjmlTitle,
+  MjmlSelector,
+  MjmlHtmlAttribute,
 } = mjmlComponents;
 
 type AllComponents = keyof typeof mjmlComponents;
@@ -239,8 +241,14 @@ export const mockMjmlReactTestData: MockComponentData = {
   ],
   MjmlHtmlAttributes: [
     {
-      mjmlReact: <MjmlHtmlAttributes />,
-      expectedMjml: `<mj-html-attributes></mj-html-attributes>`,
+      mjmlReact: (
+        <MjmlHtmlAttributes>
+          <MjmlSelector path=".custom div">
+            <MjmlHtmlAttribute name="data-id">42</MjmlHtmlAttribute>
+          </MjmlSelector>
+        </MjmlHtmlAttributes>
+      ),
+      expectedMjml: `<mj-html-attributes><mj-selector path=".custom div"><mj-html-attribute name="data-id">42</mj-html-attribute></mj-selector></mj-html-attributes>`,
     },
   ],
   MjmlFont: [
@@ -355,6 +363,18 @@ export const mockMjmlReactTestData: MockComponentData = {
         </MjmlCarousel>
       ),
       expectedMjml: `<mj-carousel><mj-carousel-image src="https://www.faire.com/logo.png"></mj-carousel-image><mj-carousel-image src="https://www.faire.com/logo.png"></mj-carousel-image></mj-carousel>`,
+    },
+  ],
+  MjmlSelector: [
+    {
+      mjmlReact: <MjmlSelector path=".custom div"> </MjmlSelector>,
+      expectedMjml: `<mj-selector path=".custom div"> </mj-selector>`,
+    },
+  ],
+  MjmlHtmlAttribute: [
+    {
+      mjmlReact: <MjmlHtmlAttribute name="data-id">42</MjmlHtmlAttribute>,
+      expectedMjml: `<mj-html-attribute name="data-id">42</mj-html-attribute>`,
     },
   ],
 };

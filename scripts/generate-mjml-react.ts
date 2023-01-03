@@ -31,7 +31,14 @@ interface IMjmlComponent {
 
 const PRESET_CORE_COMPONENTS: Array<IMjmlComponent> =
   require("mjml-preset-core").components;
-const OTHER_SUPPORTED_COMPONENTS = ["mjml", "mj-all", "mj-class", "mj-include"];
+const OTHER_SUPPORTED_COMPONENTS = [
+  "mjml",
+  "mj-all",
+  "mj-class",
+  "mj-include",
+  "mj-html-attribute",
+  "mj-selector",
+];
 
 const MJML_COMPONENTS_TO_GENERATE = [
   ...OTHER_SUPPORTED_COMPONENTS.map(
@@ -62,12 +69,23 @@ const ATTRIBUTES_TO_USE_CSSProperties_WITH = new Set([
   "backgroundSize",
 ]);
 
+const TYPE_OVERRIDE: { [componentName: string]: { [prop: string]: string } } = {
+  "mj-selector": { path: "string" },
+  "mj-html-attribute": { name: "string" },
+};
+
 const HAS_CSS_CLASS = new Set(
   MJML_COMPONENT_NAMES.filter(
     (element) =>
-      !["mjml", "mj-style", "mj-class", "mj-breakpoint", "mj-include"].includes(
-        element
-      )
+      ![
+        "mjml",
+        "mj-style",
+        "mj-class",
+        "mj-breakpoint",
+        "mj-include",
+        "mj-selector",
+        "mj-html-attribute",
+      ].includes(element)
   )
 );
 
@@ -151,6 +169,7 @@ function buildTypesForComponent(mjmlComponent: IMjmlComponent): string {
     );
   }
 
+  // TODO: Add these custom component types to TYPE_OVERRIDE
   if (componentName === "mjml") {
     typesFromMjmlAttributes["owa"] = "string";
     typesFromMjmlAttributes["lang"] = "string";
@@ -177,6 +196,12 @@ function buildTypesForComponent(mjmlComponent: IMjmlComponent): string {
   }
   if (isEndingTag) {
     typesFromMjmlAttributes["dangerouslySetInnerHTML"] = "{ __html: string }";
+  }
+  const typeOverride = TYPE_OVERRIDE[componentName];
+  if (typeOverride !== undefined) {
+    for (const [prop, type] of Object.entries(typeOverride)) {
+      typesFromMjmlAttributes[prop] = type;
+    }
   }
 
   const typeStrings = Object.entries(typesFromMjmlAttributes).map(
