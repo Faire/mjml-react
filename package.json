@@ -18,9 +18,6 @@
     "url": "https://github.com/Faire/mjml-react/issues"
   },
   "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
   "types": "dist/index.d.ts",
   "directories": {
     "test": "test"
