@@ -1,6 +1,5 @@
 import { exec as execCb } from "child_process";
 import * as fs from "fs";
-// import * as path from "path";
 import util from "util";
 
 const exec = util.promisify(execCb);
