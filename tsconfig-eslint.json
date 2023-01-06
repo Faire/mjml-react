@@ -3,7 +3,7 @@
   "compilerOptions": {
     "module": "CommonJS",
     "target": "es2015",
-    "outDir": "dist/src",
+    "outDir": "dist",
     "declaration": true
   },
   "include": ["**/*", ".eslintrc.js"]

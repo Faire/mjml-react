@@ -40,7 +40,7 @@ import {
   MjmlImage,
 } from "@faire/mjml-react";
 // we're working on improving this in #64
-import { render } from "@faire/mjml-react/dist/src/utils/render";
+import { render } from "@faire/mjml-react/utils/render";
 
 const { html, errors } = render(
   <Mjml>

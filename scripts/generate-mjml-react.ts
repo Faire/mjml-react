@@ -15,6 +15,8 @@ import { typeToUnit } from "../src/utils";
 
 const MJML_REACT_DIR = "src";
 
+const UTILS_FILE = "utils";
+
 const GENERATED_HEADER_TSX = `
 /*
  * This file is generated. Don't edit it directly.
@@ -235,7 +237,7 @@ ${GENERATED_HEADER_TSX}
 
 import React from "react";
 
-import { convertPropsToMjmlAttributes${unitsImports} } from "../utils";
+import { convertPropsToMjmlAttributes${unitsImports} } from "../${UTILS_FILE}";
 
 export interface I${reactName}Props {
   ${types}
@@ -292,6 +294,8 @@ fs.writeFileSync(
   INDEX_FILE,
   `
 ${GENERATED_HEADER_TSX}
+
+export * from "./${UTILS_FILE}";
 
 ${MJML_COMPONENTS_TO_GENERATE.map(({ componentName }) => {
   const mjmlPackageName = componentName.replace("mj-", "mjml-");

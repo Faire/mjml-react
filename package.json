@@ -17,13 +17,11 @@
   "bugs": {
     "url": "https://github.com/Faire/mjml-react/issues"
   },
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
   "files": [
-    "extensions.js",
-    "utils.js",
     "dist"
   ],
-  "types": "dist/src/index.d.ts",
+  "types": "dist/index.d.ts",
   "directories": {
     "test": "test"
   },
@@ -32,15 +30,16 @@
     "access": "public"
   },
   "scripts": {
-    "build": "/bin/rm -rf dist && yarn build-cjs && yarn build-esm",
+    "build-dist": "/bin/rm -rf dist && yarn build-cjs && yarn build-esm",
     "build-cjs": "tsc -p tsconfig.json",
     "build-esm": "tsc -p tsconfig-esm.json",
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "jest",
     "test-dist-skip-build": "jest --config=jest-dist.config.js",
-    "test-dist": "yarn build && yarn test-dist-skip-build",
+    "test-dist": "yarn build-dist && yarn test-dist-skip-build",
     "generate-mjml-react": "ts-node scripts/generate-mjml-react.ts",
+    "build-mjml-react": "ts-node scripts/build-mjml-react.ts",
     "prepare": "husky install"
   },
   "devDependencies": {

@@ -42,7 +42,11 @@ const {
   MjmlHtmlAttribute,
 } = mjmlComponents;
 
-type AllComponents = keyof typeof mjmlComponents;
+type AllComponents = Exclude<
+  keyof typeof mjmlComponents,
+  "convertPropsToMjmlAttributes" | "typeToUnit"
+>;
+
 type MjmlComponentTest = {
   mjmlReact: React.ReactElement;
   expectedMjml: string;
