@@ -36,7 +36,7 @@ jobs:
       - name: Run semantic release (release + bump version)
         run: |
           cd dist
-          npx semantic-release --debug
+          npx semantic-release
         env:
           HUSKY: 0
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

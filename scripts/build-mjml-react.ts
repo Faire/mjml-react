@@ -7,12 +7,20 @@ const exec = util.promisify(execCb);
 
 async function buildMjmlReact() {
   await exec("yarn build-dist");
-  movePackageJSON();
+  moveFilesToDist();
 }
 
-function movePackageJSON() {
-  const file = fs.readFileSync("package.json");
-  fs.writeFileSync("dist/package.json", file.toString().replace(/dist\//g, ""));
+const FILES_TO_COPY = ["package.json", "LICENSE", "README.md"];
+function moveFilesToDist() {
+  FILES_TO_COPY.forEach((fileToCopy) => {
+    const destination = `dist/${fileToCopy}`;
+    if (fileToCopy === "package.json") {
+      const file = fs.readFileSync(fileToCopy);
+      fs.writeFileSync(destination, file.toString().replace(/dist\//g, ""));
+    } else {
+      fs.copyFileSync(fileToCopy, destination);
+    }
+  });
 }
 
 buildMjmlReact();
