@@ -36,7 +36,7 @@ jobs:
       - name: Run semantic release (release + bump version)
         run: |
           cd dist
-          npx semantic-release
+          npx semantic-release --debug
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
