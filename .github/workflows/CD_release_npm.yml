@@ -31,10 +31,13 @@ jobs:
 
       - run: |
           yarn install
-          yarn build
+          yarn build-mjml-react
 
       - name: Run semantic release (release + bump version)
-        run: npx semantic-release
+        run: |
+          cd dist
+          npx semantic-release
         env:
+          HUSKY: 0
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

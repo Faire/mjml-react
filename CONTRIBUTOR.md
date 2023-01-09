@@ -64,12 +64,13 @@ Then, you can run several commands:
 
 For building and testing:
 
-- `yarn build-cjs` builds the cjs `dist/src` folder
+- `yarn build-cjs` builds the cjs `dist` folder
 - `yarn build-esm` builds the esm `dist/esm` folder
-- `yarn build` builds both the cjs and esm folders
+- `yarn build-dist` builds both the cjs and esm folders
+- `yarn build-mjml-react` builds all folders and prepares the dist folder for publishing
 - `yarn test` runs the test suite on the development `src` folder
-- `yarn test-dist` builds and runs the test suite on the `dist/src` folder
-- `yarn test-dist-skip-build` runs the test suite on `dist/src` without building
+- `yarn test-dist` builds and runs the test suite on the `dist` folder
+- `yarn test-dist-skip-build` runs the test suite on `dist` without building
 
 As pull requests contributed externally from Faire require approval to have workflows run, <b>please ensure to test locally before pushing</b>.
 

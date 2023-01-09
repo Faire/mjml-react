@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: |
           yarn install
-          yarn build
+          yarn build-dist
       - name: Format
         run: yarn prettier --check .
       - name: Lint

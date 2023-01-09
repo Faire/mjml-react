@@ -15,6 +15,9 @@ import { typeToUnit } from "../src/utils";
 
 const MJML_REACT_DIR = "src";
 
+const UTILS_FILE = "utils";
+const MJML_COMPONENTS_FOLDER = "mjml";
+
 const GENERATED_HEADER_TSX = `
 /*
  * This file is generated. Don't edit it directly.
@@ -235,7 +238,7 @@ ${GENERATED_HEADER_TSX}
 
 import React from "react";
 
-import { convertPropsToMjmlAttributes${unitsImports} } from "../utils";
+import { convertPropsToMjmlAttributes${unitsImports} } from "../${UTILS_FILE}";
 
 export interface I${reactName}Props {
   ${types}
@@ -267,7 +270,7 @@ function buildReactCreateElementProps(componentName: string): {
 }
 
 // reset directory
-const GENERATED_MJML_FILES = path.join(MJML_REACT_DIR, "mjml");
+const GENERATED_MJML_FILES = path.join(MJML_REACT_DIR, MJML_COMPONENTS_FOLDER);
 del.sync(GENERATED_MJML_FILES);
 fs.mkdirSync(GENERATED_MJML_FILES);
 
@@ -287,18 +290,30 @@ for (const mjmlComponent of MJML_COMPONENTS_TO_GENERATE) {
 }
 
 // create index export file for mjml-react components
-const INDEX_FILE = path.join(MJML_REACT_DIR, `index.tsx`);
+const MJML_INDEX_FILE = path.join(GENERATED_MJML_FILES, `index.tsx`);
 fs.writeFileSync(
-  INDEX_FILE,
+  MJML_INDEX_FILE,
   `
 ${GENERATED_HEADER_TSX}
 
 ${MJML_COMPONENTS_TO_GENERATE.map(({ componentName }) => {
   const mjmlPackageName = componentName.replace("mj-", "mjml-");
   const reactName = upperFirst(camelCase(mjmlPackageName));
-  return `export { ${reactName} } from './mjml/${reactName}';
-export type { I${reactName}Props } from './mjml/${reactName}';`;
+  return `export { ${reactName} } from './${reactName}';
+export type { I${reactName}Props } from './${reactName}';`;
 }).join("\n")}
+`
+);
+
+// create index export for main mjml-react package export
+const MAIN_INDEX_FILE = path.join(MJML_REACT_DIR, `index.tsx`);
+fs.writeFileSync(
+  MAIN_INDEX_FILE,
+  `
+${GENERATED_HEADER_TSX}
+
+export * from "./${UTILS_FILE}";
+export * from "./${MJML_COMPONENTS_FOLDER}";
 `
 );
 
@@ -319,5 +334,5 @@ ${gitAttributes}
 );
 
 require("child_process").execSync(
-  `yarn prettier --write ${GENERATED_MJML_FILES} ${INDEX_FILE}`
+  `yarn prettier --write ${GENERATED_MJML_FILES} ${MJML_INDEX_FILE} ${MAIN_INDEX_FILE}`
 );

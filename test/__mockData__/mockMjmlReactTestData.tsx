@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as mjmlComponents from "../../src";
+import * as mjmlComponents from "../../src/mjml";
 
 const {
   Mjml,
@@ -43,6 +43,7 @@ const {
 } = mjmlComponents;
 
 type AllComponents = keyof typeof mjmlComponents;
+
 type MjmlComponentTest = {
   mjmlReact: React.ReactElement;
   expectedMjml: string;

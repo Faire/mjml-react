@@ -5,6 +5,6 @@ const baseConfig = require("./jest.config");
 module.exports = {
   ...baseConfig,
   moduleNameMapper: {
-    "src(.*)$": "<rootDir>/dist/src$1",
+    "src(.*)$": "<rootDir>/dist$1",
   },
 };
