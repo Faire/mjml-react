@@ -273,7 +273,7 @@ export const mockMjmlReactTestData: MockComponentData = {
     },
     {
       mjmlReact: <MjmlStyle>{"body > div {}"}</MjmlStyle>,
-      expectedMjml: `<mj-style>body &gt; div {}</mj-style>`,
+      expectedMjml: `<mj-style>body > div {}</mj-style>`,
     },
     {
       mjmlReact: (
