@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as mjmlComponents from "../../src";
+import * as mjmlComponents from "../../src/mjml";
 
 const {
   Mjml,
@@ -42,10 +42,7 @@ const {
   MjmlHtmlAttribute,
 } = mjmlComponents;
 
-type AllComponents = Exclude<
-  keyof typeof mjmlComponents,
-  "convertPropsToMjmlAttributes" | "typeToUnit"
->;
+type AllComponents = keyof typeof mjmlComponents;
 
 type MjmlComponentTest = {
   mjmlReact: React.ReactElement;
