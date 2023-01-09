@@ -39,7 +39,9 @@ import {
   MjmlButton,
   MjmlImage,
 } from "@faire/mjml-react";
-// we're working on improving this in #64
+// The below render import was previously:
+// import { render } from "@faire/mjml-react/dist/src/utils/render";
+// Please migrate to importing from "@faire/mjml-react/utils/render"
 import { render } from "@faire/mjml-react/utils/render";
 
 const { html, errors } = render(
