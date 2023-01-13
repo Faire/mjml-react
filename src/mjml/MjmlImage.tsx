@@ -4,12 +4,7 @@
  */
 import React from "react";
 
-import {
-  convertPropsToMjmlAttributes,
-  Matrix,
-  Pixel,
-  Percentage,
-} from "../utils";
+import { convertPropsToMjmlAttributes } from "../utils";
 
 export interface IMjmlImageProps {
   alt?: string;
@@ -32,18 +27,18 @@ export interface IMjmlImageProps {
   containerBackgroundColor?: string;
   fluidOnMobile?: boolean;
   /** MJML default value: 10px 25px */
-  padding?: Matrix<Pixel | Percentage>;
-  paddingBottom?: Pixel | Percentage;
-  paddingLeft?: Pixel | Percentage;
-  paddingRight?: Pixel | Percentage;
-  paddingTop?: Pixel | Percentage;
+  padding?: string | number;
+  paddingBottom?: string | number;
+  paddingLeft?: string | number;
+  paddingRight?: string | number;
+  paddingTop?: string | number;
   /** MJML default value: _blank */
   target?: string;
-  width?: Pixel;
+  width?: string | number;
   /** MJML default value: auto */
-  height?: Pixel;
-  maxHeight?: Pixel | Percentage;
-  fontSize?: Pixel;
+  height?: string | number;
+  maxHeight?: string | number;
+  fontSize?: string | number;
   usemap?: string;
   className?: string;
   cssClass?: string;

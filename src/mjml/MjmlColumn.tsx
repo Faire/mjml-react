@@ -4,12 +4,7 @@
  */
 import React from "react";
 
-import {
-  convertPropsToMjmlAttributes,
-  Matrix,
-  Pixel,
-  Percentage,
-} from "../utils";
+import { convertPropsToMjmlAttributes } from "../utils";
 
 export interface IMjmlColumnProps {
   backgroundColor?: React.CSSProperties["backgroundColor"];
@@ -22,19 +17,19 @@ export interface IMjmlColumnProps {
   /** MJML default value: ltr */
   direction?: "ltr" | "rtl";
   innerBackgroundColor?: string;
-  paddingBottom?: Pixel | Percentage;
-  paddingLeft?: Pixel | Percentage;
-  paddingRight?: Pixel | Percentage;
-  paddingTop?: Pixel | Percentage;
+  paddingBottom?: string | number;
+  paddingLeft?: string | number;
+  paddingRight?: string | number;
+  paddingTop?: string | number;
   innerBorder?: string;
   innerBorderBottom?: string;
   innerBorderLeft?: string;
-  innerBorderRadius?: Matrix<Pixel | Percentage>;
+  innerBorderRadius?: string | number;
   innerBorderRight?: string;
   innerBorderTop?: string;
-  padding?: Matrix<Pixel | Percentage>;
+  padding?: string | number;
   verticalAlign?: React.CSSProperties["verticalAlign"];
-  width?: Pixel | Percentage;
+  width?: string | number;
   className?: string;
   cssClass?: string;
   mjmlClass?: string;

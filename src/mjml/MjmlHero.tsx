@@ -4,36 +4,31 @@
  */
 import React from "react";
 
-import {
-  convertPropsToMjmlAttributes,
-  Matrix,
-  Pixel,
-  Percentage,
-} from "../utils";
+import { convertPropsToMjmlAttributes } from "../utils";
 
 export interface IMjmlHeroProps {
   /** MJML default value: fixed-height */
   mode?: string;
   /** MJML default value: 0px */
-  height?: Pixel | Percentage;
+  height?: string | number;
   backgroundUrl?: string;
-  backgroundWidth?: Pixel | Percentage;
-  backgroundHeight?: Pixel | Percentage;
+  backgroundWidth?: string | number;
+  backgroundHeight?: string | number;
   backgroundPosition?: React.CSSProperties["backgroundPosition"];
   borderRadius?: React.CSSProperties["borderRadius"];
   containerBackgroundColor?: string;
   innerBackgroundColor?: string;
-  innerPadding?: Matrix<Pixel | Percentage>;
-  innerPaddingTop?: Pixel | Percentage;
-  innerPaddingLeft?: Pixel | Percentage;
-  innerPaddingRight?: Pixel | Percentage;
-  innerPaddingBottom?: Pixel | Percentage;
+  innerPadding?: string | number;
+  innerPaddingTop?: string | number;
+  innerPaddingLeft?: string | number;
+  innerPaddingRight?: string | number;
+  innerPaddingBottom?: string | number;
   /** MJML default value: 0px */
-  padding?: Matrix<Pixel | Percentage>;
-  paddingBottom?: Pixel | Percentage;
-  paddingLeft?: Pixel | Percentage;
-  paddingRight?: Pixel | Percentage;
-  paddingTop?: Pixel | Percentage;
+  padding?: string | number;
+  paddingBottom?: string | number;
+  paddingLeft?: string | number;
+  paddingRight?: string | number;
+  paddingTop?: string | number;
   backgroundColor?: React.CSSProperties["backgroundColor"];
   verticalAlign?: React.CSSProperties["verticalAlign"];
   className?: string;

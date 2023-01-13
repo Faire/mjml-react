@@ -106,20 +106,6 @@ describe("mjml components prop values", () => {
     expect(
       renderToMjml(<MjmlButton padding="0 1px 2% 0px">Button4</MjmlButton>)
     ).toBe('<mj-button padding="0 1px 2% 0px">Button4</mj-button>');
-
-    // Test with invalid props. Code should still render but typescript should
-    // throw an error
-    expect(
-      // @ts-expect-error invalid padding prop (not a matrix) for test purposes
-      renderToMjml(<MjmlButton padding="not a matrix">Button5</MjmlButton>)
-    ).toBe('<mj-button padding="not a matrix">Button5</mj-button>');
-
-    expect(
-      renderToMjml(
-        // @ts-expect-error invalid padding prop (too many values) for test purposes
-        <MjmlButton padding="1px 1px 1px 1px 1px">Button6</MjmlButton>
-      )
-    ).toBe('<mj-button padding="1px 1px 1px 1px 1px">Button6</mj-button>');
   });
 
   it("accepts correct property types for React.CSSProperties", () => {

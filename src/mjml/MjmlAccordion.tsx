@@ -4,12 +4,7 @@
  */
 import React from "react";
 
-import {
-  convertPropsToMjmlAttributes,
-  Matrix,
-  Pixel,
-  Percentage,
-} from "../utils";
+import { convertPropsToMjmlAttributes } from "../utils";
 
 export interface IMjmlAccordionProps {
   containerBackgroundColor?: string;
@@ -17,19 +12,19 @@ export interface IMjmlAccordionProps {
   border?: React.CSSProperties["border"];
   fontFamily?: string;
   iconAlign?: "top" | "middle" | "bottom";
-  iconWidth?: Pixel | Percentage;
-  iconHeight?: Pixel | Percentage;
+  iconWidth?: string | number;
+  iconHeight?: string | number;
   iconWrappedUrl?: string;
   iconWrappedAlt?: string;
   iconUnwrappedUrl?: string;
   iconUnwrappedAlt?: string;
   iconPosition?: "left" | "right";
-  paddingBottom?: Pixel | Percentage;
-  paddingLeft?: Pixel | Percentage;
-  paddingRight?: Pixel | Percentage;
-  paddingTop?: Pixel | Percentage;
+  paddingBottom?: string | number;
+  paddingLeft?: string | number;
+  paddingRight?: string | number;
+  paddingTop?: string | number;
   /** MJML default value: 10px 25px */
-  padding?: Matrix<Pixel | Percentage>;
+  padding?: string | number;
   className?: string;
   cssClass?: string;
   mjmlClass?: string;

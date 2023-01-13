@@ -4,12 +4,7 @@
  */
 import React from "react";
 
-import {
-  convertPropsToMjmlAttributes,
-  Matrix,
-  Pixel,
-  Percentage,
-} from "../utils";
+import { convertPropsToMjmlAttributes } from "../utils";
 
 export interface IMjmlSectionProps {
   backgroundColor?: React.CSSProperties["backgroundColor"];
@@ -29,13 +24,13 @@ export interface IMjmlSectionProps {
   direction?: "ltr" | "rtl";
   fullWidth?: boolean;
   /** MJML default value: 20px 0 */
-  padding?: Matrix<Pixel | Percentage>;
-  paddingTop?: Pixel | Percentage;
-  paddingBottom?: Pixel | Percentage;
-  paddingLeft?: Pixel | Percentage;
-  paddingRight?: Pixel | Percentage;
+  padding?: string | number;
+  paddingTop?: string | number;
+  paddingBottom?: string | number;
+  paddingLeft?: string | number;
+  paddingRight?: string | number;
   textAlign?: React.CSSProperties["textAlign"];
-  textPadding?: Matrix<Pixel | Percentage>;
+  textPadding?: string | number;
   className?: string;
   cssClass?: string;
   mjmlClass?: string;

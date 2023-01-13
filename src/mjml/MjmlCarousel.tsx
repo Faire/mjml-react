@@ -4,33 +4,28 @@
  */
 import React from "react";
 
-import {
-  convertPropsToMjmlAttributes,
-  Matrix,
-  Pixel,
-  Percentage,
-} from "../utils";
+import { convertPropsToMjmlAttributes } from "../utils";
 
 export interface IMjmlCarouselProps {
   /** MJML default value: center */
   align?: "left" | "center" | "right";
   borderRadius?: React.CSSProperties["borderRadius"];
   containerBackgroundColor?: string;
-  iconWidth?: Pixel | Percentage;
+  iconWidth?: string | number;
   leftIcon?: string;
-  padding?: Matrix<Pixel | Percentage>;
-  paddingTop?: Pixel | Percentage;
-  paddingBottom?: Pixel | Percentage;
-  paddingLeft?: Pixel | Percentage;
-  paddingRight?: Pixel | Percentage;
+  padding?: string | number;
+  paddingTop?: string | number;
+  paddingBottom?: string | number;
+  paddingLeft?: string | number;
+  paddingRight?: string | number;
   rightIcon?: string;
   /** MJML default value: visible */
   thumbnails?: "visible" | "hidden";
   tbBorder?: string;
-  tbBorderRadius?: Pixel | Percentage;
+  tbBorderRadius?: string | number;
   tbHoverBorderColor?: string;
   tbSelectedBorderColor?: string;
-  tbWidth?: Pixel | Percentage;
+  tbWidth?: string | number;
   className?: string;
   cssClass?: string;
   mjmlClass?: string;
