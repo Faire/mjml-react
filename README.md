@@ -140,9 +140,13 @@ fixConditionalComment(
 
 ## Limitations
 
-Currently `mjml` and `@faire/mjml-react` libraries are meant to be run inside a node.
+Currently `mjml` and `@faire/mjml-react` libraries are meant to be run inside Node.js.
 
 ## Example project
 
 You can find an example project here
 [https://github.com/wix-incubator/mjml-react-example](https://github.com/wix-incubator/mjml-react-example)
+
+## Related projects
+
+- [`mjml-dynamic`](https://github.com/mifi/mjml-dynamic) - lets you create a `.mjml` template using your favorite tooling, and inject dynamic content. Can be used in conjunction with `mjml-react` to render parts of a `.mjml` using React.
