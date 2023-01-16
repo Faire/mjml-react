@@ -17,6 +17,22 @@ There is an awesome library [mjml](https://mjml.io/) with github repo here [http
 `MJML` is a markup language created by [Mailjet](https://www.mailjet.com/).
 So in order to create emails on the fly we created a library with `React` components.
 
+## What's new in V3?
+
+We wanted V3 of mjml-react to be fairly easy to migrate to from V2. We will implement more advanced features in V4. The main updates in V3 include:
+
+- Typescript: mjml-react is now written in typescript which helps ensure correct props are passed to mjml components
+- Full mjml component support: We use an automated script for pulling mjml components and creating a corresponding mjml-react component. This means we get full support of all components available in the latest mjml version
+- Other small changes: add dangerouslySetInnerHTML in mjml-react for mjml ending tags, update testing, add in-code documenation
+
+## What's coming in V4?
+
+In V4 we are exploring exciting features that will make mjml-react even more powerful. This includes:
+
+- Improved prop type safety: help ensure correct formatting for props like padding, width, and height
+
+If you want to be on the cutting edge of what is being release, we are publishing a v4-main-alpha version to npm.
+
 ## How it works
 
 Install the required dependencies first:
