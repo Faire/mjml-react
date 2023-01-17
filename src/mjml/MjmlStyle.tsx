@@ -16,9 +16,12 @@ export function MjmlStyle({
   children,
   ...props
 }: IMjmlStyleProps): JSX.Element {
-  return React.createElement(
-    "mj-style",
-    convertPropsToMjmlAttributes(props),
-    children
-  );
+  return React.createElement("mj-style", {
+    ...convertPropsToMjmlAttributes(props),
+    dangerouslySetInnerHTML: {
+      __html: props.dangerouslySetInnerHTML
+        ? props.dangerouslySetInnerHTML.__html
+        : children,
+    },
+  });
 }

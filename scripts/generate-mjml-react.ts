@@ -11,8 +11,6 @@ import camelCase from "lodash.camelcase";
 import upperFirst from "lodash.upperfirst";
 import * as path from "path";
 
-import { typeToUnit } from "../src/utils";
-
 const MJML_REACT_DIR = "src";
 
 const UTILS_FILE = "utils";
@@ -129,14 +127,11 @@ function getPropTypeFromMjmlAttributeType(
   if (ATTRIBUTES_TO_USE_CSSProperties_WITH.has(attribute)) {
     return `React.CSSProperties["${attribute}"]`;
   }
-  if (mjmlAttributeType.startsWith("unit")) {
-    const validUnitTypes: string[] = Object.keys(typeToUnit).filter((type) =>
-      mjmlAttributeType.includes(typeToUnit[type as keyof typeof typeToUnit])
-    );
-    if (mjmlAttributeType.endsWith("{1,4}")) {
-      return `Matrix<${validUnitTypes.join(" | ")}>`;
-    }
-    return validUnitTypes.join(" | ");
+  if (
+    mjmlAttributeType.startsWith("unit") &&
+    mjmlAttributeType.includes("px")
+  ) {
+    return "string | number";
   }
   if (mjmlAttributeType === "boolean") {
     return "boolean";
@@ -228,17 +223,13 @@ function buildFileContents({
 }) {
   const { props, createElementProps } =
     buildReactCreateElementProps(componentName);
-  const unitsUsed = ["Matrix", ...Object.keys(typeToUnit)]
-    .filter((unit) => types.includes(unit))
-    .join(", ");
-  const unitsImports = unitsUsed ? ", " + unitsUsed : "";
 
   return `
 ${GENERATED_HEADER_TSX}
 
 import React from "react";
 
-import { convertPropsToMjmlAttributes${unitsImports} } from "../${UTILS_FILE}";
+import { convertPropsToMjmlAttributes } from "../${UTILS_FILE}";
 
 export interface I${reactName}Props {
   ${types}
@@ -257,6 +248,13 @@ function buildReactCreateElementProps(componentName: string): {
   const withChildren = "{children, ...props}";
   const withoutChildren = "props";
 
+  if (componentName === "mj-style") {
+    return {
+      props: withChildren,
+      createElementProps:
+        "{ ...convertPropsToMjmlAttributes(props), dangerouslySetInnerHTML: { __html: props.dangerouslySetInnerHTML ? props.dangerouslySetInnerHTML.__html : children } }",
+    };
+  }
   if (HAS_CHILDREN.has(componentName)) {
     return {
       props: withChildren,
