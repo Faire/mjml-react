@@ -17,6 +17,10 @@ There is an awesome library [mjml](https://mjml.io/) with github repo here [http
 `MJML` is a markup language created by [Mailjet](https://www.mailjet.com/).
 So in order to create emails on the fly we created a library with `React` components.
 
+## Get started today with V2 - 100% backwards compatible with https://github.com/wix-incubator/mjml-react/
+
+V2 is a drop in replacement for https://github.com/wix-incubator/mjml-react/, with some additional support. If there's a component missing you can make a PR against https://github.com/Faire/mjml-react/tree/main-v2 or submit an issue and we'll try to unblock you.
+
 ## What's new in V3?
 
 We wanted V3 of mjml-react to be fairly easy to migrate to from V2. We will implement more advanced features in V4. The main updates in V3 include:
@@ -31,7 +35,7 @@ In V4 we are exploring exciting features that will make mjml-react even more pow
 
 - Improved prop type safety: help ensure correct formatting for props like padding, width, and height
 
-If you want to be on the cutting edge of what is being release, we are publishing a v4-main-alpha version to npm.
+If you want to be on the cutting edge of what is being released, we are publishing a [v4-main-alpha version](https://www.npmjs.com/package/@faire/mjml-react/v/main-alpha) to npm.
 
 ## How it works
 
