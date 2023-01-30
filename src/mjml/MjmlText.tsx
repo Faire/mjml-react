@@ -16,7 +16,7 @@ export interface IMjmlTextProps {
   fontFamily?: string;
   fontSize?: string | number;
   fontStyle?: string;
-  fontWeight?: string;
+  fontWeight?: string | number;
   height?: string | number;
   letterSpacing?: string | number;
   lineHeight?: string | number;
