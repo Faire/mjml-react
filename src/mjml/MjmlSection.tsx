@@ -29,7 +29,7 @@ export interface IMjmlSectionProps {
   paddingBottom?: string | number;
   paddingLeft?: string | number;
   paddingRight?: string | number;
-  textAlign?: React.CSSProperties["textAlign"];
+  textAlign?: "left" | "right" | "center";
   textPadding?: string | number;
   className?: string;
   cssClass?: string;
