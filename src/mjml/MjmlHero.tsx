@@ -30,7 +30,7 @@ export interface IMjmlHeroProps {
   paddingRight?: string | number;
   paddingTop?: string | number;
   backgroundColor?: React.CSSProperties["backgroundColor"];
-  verticalAlign?: React.CSSProperties["verticalAlign"];
+  verticalAlign?: "top" | "bottom" | "middle";
   className?: string;
   cssClass?: string;
   mjmlClass?: string;

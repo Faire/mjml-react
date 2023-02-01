@@ -28,7 +28,7 @@ export interface IMjmlColumnProps {
   innerBorderRight?: string;
   innerBorderTop?: string;
   padding?: string | number;
-  verticalAlign?: React.CSSProperties["verticalAlign"];
+  verticalAlign?: "top" | "bottom" | "middle";
   width?: string | number;
   className?: string;
   cssClass?: string;

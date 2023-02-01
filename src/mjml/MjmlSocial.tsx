@@ -33,7 +33,7 @@ export interface IMjmlSocialProps {
   tableLayout?: "auto" | "fixed";
   textPadding?: string | number;
   textDecoration?: React.CSSProperties["textDecoration"];
-  verticalAlign?: React.CSSProperties["verticalAlign"];
+  verticalAlign?: "top" | "bottom" | "middle";
   className?: string;
   cssClass?: string;
   mjmlClass?: string;

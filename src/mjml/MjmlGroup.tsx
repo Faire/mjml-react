@@ -10,7 +10,7 @@ export interface IMjmlGroupProps {
   backgroundColor?: React.CSSProperties["backgroundColor"];
   /** MJML default value: ltr */
   direction?: "ltr" | "rtl";
-  verticalAlign?: React.CSSProperties["verticalAlign"];
+  verticalAlign?: "top" | "bottom" | "middle";
   width?: string | number;
   className?: string;
   cssClass?: string;
