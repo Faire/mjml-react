@@ -4,8 +4,10 @@ on:
   push:
     branches:
       - main
-      - main-beta
-      - main-alpha
+      - main-v2
+      - main-v4
+      - beta
+      - alpha
 
 jobs:
   runCI:

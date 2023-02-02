@@ -35,7 +35,7 @@ In V4 we are exploring exciting features that will make mjml-react even more pow
 
 - Improved prop type safety: help ensure correct formatting for props like padding, width, and height
 
-If you want to be on the cutting edge of what is being released, we are publishing a [v4-main-alpha version](https://www.npmjs.com/package/@faire/mjml-react/v/main-alpha) to npm.
+If you want to be on the cutting edge of what is being released, we are publishing a [v4-main-alpha version](https://www.npmjs.com/package/@faire/mjml-react/v/alpha) to npm.
 
 ## How it works
 

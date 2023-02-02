@@ -88,12 +88,18 @@
   "release": {
     "branches": [
       "main",
+      "main-v2",
       {
-        "name": "main-beta",
+        "name": "main-v4",
+        "channel": "alpha",
         "prerelease": true
       },
       {
-        "name": "main-alpha",
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
         "prerelease": true
       }
     ],

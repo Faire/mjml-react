@@ -35,7 +35,8 @@ In all cases the scope is optional (i.e. the title `feat: add 'graphiteWidth' op
 
 In general, pull requests addressing the latest version should target the [`main`](https://github.com/faire/mjml-react/tree/main) branch.
 
-A current beta or alpha version may exist to test multiple fixes simultaneously, which are reserved under the branch names `main-beta` and `main-alpha`. Eventually this prerelease branch should be merged into `main` without squashing, after which a single version bump from `main` is determined by the most significant type of all merging commits (chore, patch, minor, major).
+A current beta or alpha version may exist to test multiple fixes simultaneously, which are reserved under the branch names `beta` and `alpha`.
+Eventually this prerelease branch should be merged into `main` **_without squashing_**, after which a single version bump from `main` is determined by the most significant type of all merging commits (chore, patch, minor, major).
 
 ## Fixing A Bug
 
