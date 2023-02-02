@@ -9,7 +9,7 @@ import { convertPropsToMjmlAttributes } from "../utils";
 export interface IMjmlSectionProps {
   backgroundColor?: React.CSSProperties["backgroundColor"];
   backgroundUrl?: string;
-  backgroundRepeat?: React.CSSProperties["backgroundRepeat"];
+  backgroundRepeat?: "repeat" | "no-repeat";
   backgroundSize?: React.CSSProperties["backgroundSize"];
   backgroundPosition?: React.CSSProperties["backgroundPosition"];
   backgroundPositionX?: string;
@@ -29,7 +29,7 @@ export interface IMjmlSectionProps {
   paddingBottom?: string | number;
   paddingLeft?: string | number;
   paddingRight?: string | number;
-  textAlign?: React.CSSProperties["textAlign"];
+  textAlign?: "left" | "center" | "right";
   textPadding?: string | number;
   className?: string;
   cssClass?: string;

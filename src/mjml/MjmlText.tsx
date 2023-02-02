@@ -28,7 +28,7 @@ export interface IMjmlTextProps {
   padding?: string | number;
   textDecoration?: React.CSSProperties["textDecoration"];
   textTransform?: React.CSSProperties["textTransform"];
-  verticalAlign?: React.CSSProperties["verticalAlign"];
+  verticalAlign?: "top" | "bottom" | "middle";
   className?: string;
   cssClass?: string;
   mjmlClass?: string;

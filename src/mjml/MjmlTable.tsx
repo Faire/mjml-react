@@ -30,7 +30,7 @@ export interface IMjmlTableProps {
   padding?: string | number;
   role?: "none" | "presentation";
   tableLayout?: "auto" | "fixed" | "initial" | "inherit";
-  verticalAlign?: React.CSSProperties["verticalAlign"];
+  verticalAlign?: "top" | "bottom" | "middle";
   /** MJML default value: 100% */
   width?: string | number;
   className?: string;

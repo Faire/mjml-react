@@ -42,8 +42,8 @@ export interface IMjmlButtonProps {
   target?: string;
   textDecoration?: React.CSSProperties["textDecoration"];
   textTransform?: React.CSSProperties["textTransform"];
-  verticalAlign?: React.CSSProperties["verticalAlign"];
-  textAlign?: React.CSSProperties["textAlign"];
+  verticalAlign?: "top" | "bottom" | "middle";
+  textAlign?: "left" | "right" | "center";
   width?: string | number;
   className?: string;
   cssClass?: string;

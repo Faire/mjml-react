@@ -39,7 +39,7 @@ export interface IMjmlSocialElementProps {
   /** MJML default value: _blank */
   target?: string;
   textDecoration?: React.CSSProperties["textDecoration"];
-  verticalAlign?: React.CSSProperties["verticalAlign"];
+  verticalAlign?: "top" | "middle" | "bottom";
   className?: string;
   cssClass?: string;
   mjmlClass?: string;

@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as mjmlComponents from "../src";
+import * as mjmlComponents from "../src/mjml";
 import { renderToMjml } from "../src/utils/renderToMjml";
 
 /**

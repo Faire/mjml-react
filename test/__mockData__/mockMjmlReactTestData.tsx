@@ -133,6 +133,11 @@ export const mockMjmlReactTestData: MockComponentData = {
       ),
       expectedMjml: `<mj-section full-width="full-width" padding-top="10px" css-class="first-section">Content</mj-section>`,
     },
+    {
+      // @ts-expect-error invalid textAlign prop for test purposes
+      mjmlReact: <MjmlSection textAlign="start">Content</MjmlSection>,
+      expectedMjml: '<mj-section text-align="start">Content</mj-section>',
+    },
   ],
   MjmlColumn: [
     {
