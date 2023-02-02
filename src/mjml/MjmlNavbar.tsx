@@ -4,12 +4,7 @@
  */
 import React from "react";
 
-import {
-  convertPropsToMjmlAttributes,
-  Matrix,
-  Pixel,
-  Percentage,
-} from "../utils";
+import { convertPropsToMjmlAttributes } from "../utils";
 
 export interface IMjmlNavbarProps {
   /** MJML default value: center */
@@ -20,21 +15,21 @@ export interface IMjmlNavbarProps {
   icoOpen?: string;
   icoClose?: string;
   icoColor?: string;
-  icoFontSize?: Pixel | Percentage;
+  icoFontSize?: string | number;
   icoFontFamily?: string;
   icoTextTransform?: string;
-  icoPadding?: Matrix<Pixel | Percentage>;
-  icoPaddingLeft?: Pixel | Percentage;
-  icoPaddingTop?: Pixel | Percentage;
-  icoPaddingRight?: Pixel | Percentage;
-  icoPaddingBottom?: Pixel | Percentage;
-  padding?: Matrix<Pixel | Percentage>;
-  paddingLeft?: Pixel | Percentage;
-  paddingTop?: Pixel | Percentage;
-  paddingRight?: Pixel | Percentage;
-  paddingBottom?: Pixel | Percentage;
+  icoPadding?: string | number;
+  icoPaddingLeft?: string | number;
+  icoPaddingTop?: string | number;
+  icoPaddingRight?: string | number;
+  icoPaddingBottom?: string | number;
+  padding?: string | number;
+  paddingLeft?: string | number;
+  paddingTop?: string | number;
+  paddingRight?: string | number;
+  paddingBottom?: string | number;
   icoTextDecoration?: string;
-  icoLineHeight?: Pixel | Percentage;
+  icoLineHeight?: string | number;
   className?: string;
   cssClass?: string;
   mjmlClass?: string;

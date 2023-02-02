@@ -4,19 +4,13 @@
  */
 import React from "react";
 
-import {
-  convertPropsToMjmlAttributes,
-  Matrix,
-  Pixel,
-  Percentage,
-  Ephemeral,
-} from "../utils";
+import { convertPropsToMjmlAttributes } from "../utils";
 
 export interface IMjmlNavbarLinkProps {
   /** MJML default value: #000000 */
   color?: React.CSSProperties["color"];
   fontFamily?: string;
-  fontSize?: Pixel;
+  fontSize?: string | number;
   fontStyle?: string;
   fontWeight?: string;
   href?: string;
@@ -24,14 +18,14 @@ export interface IMjmlNavbarLinkProps {
   /** MJML default value: _blank */
   target?: string;
   rel?: string;
-  letterSpacing?: Pixel | Ephemeral;
-  lineHeight?: Pixel | Percentage;
-  paddingBottom?: Pixel | Percentage;
-  paddingLeft?: Pixel | Percentage;
-  paddingRight?: Pixel | Percentage;
-  paddingTop?: Pixel | Percentage;
+  letterSpacing?: string | number;
+  lineHeight?: string | number;
+  paddingBottom?: string | number;
+  paddingLeft?: string | number;
+  paddingRight?: string | number;
+  paddingTop?: string | number;
   /** MJML default value: 15px 10px */
-  padding?: Matrix<Pixel | Percentage>;
+  padding?: string | number;
   textDecoration?: React.CSSProperties["textDecoration"];
   textTransform?: React.CSSProperties["textTransform"];
   className?: string;

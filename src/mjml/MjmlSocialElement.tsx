@@ -4,12 +4,7 @@
  */
 import React from "react";
 
-import {
-  convertPropsToMjmlAttributes,
-  Matrix,
-  Pixel,
-  Percentage,
-} from "../utils";
+import { convertPropsToMjmlAttributes } from "../utils";
 
 export interface IMjmlSocialElementProps {
   /** MJML default value: left */
@@ -19,22 +14,22 @@ export interface IMjmlSocialElementProps {
   color?: React.CSSProperties["color"];
   borderRadius?: React.CSSProperties["borderRadius"];
   fontFamily?: string;
-  fontSize?: Pixel;
+  fontSize?: string | number;
   fontStyle?: string;
   fontWeight?: string;
   href?: string;
-  iconSize?: Pixel | Percentage;
-  iconHeight?: Pixel | Percentage;
-  iconPadding?: Matrix<Pixel | Percentage>;
-  lineHeight?: Pixel | Percentage;
+  iconSize?: string | number;
+  iconHeight?: string | number;
+  iconPadding?: string | number;
+  lineHeight?: string | number;
   name?: string;
-  paddingBottom?: Pixel | Percentage;
-  paddingLeft?: Pixel | Percentage;
-  paddingRight?: Pixel | Percentage;
-  paddingTop?: Pixel | Percentage;
+  paddingBottom?: string | number;
+  paddingLeft?: string | number;
+  paddingRight?: string | number;
+  paddingTop?: string | number;
   /** MJML default value: 4px */
-  padding?: Matrix<Pixel | Percentage>;
-  textPadding?: Matrix<Pixel | Percentage>;
+  padding?: string | number;
+  textPadding?: string | number;
   rel?: string;
   src?: string;
   srcset?: string;
@@ -44,7 +39,7 @@ export interface IMjmlSocialElementProps {
   /** MJML default value: _blank */
   target?: string;
   textDecoration?: React.CSSProperties["textDecoration"];
-  verticalAlign?: React.CSSProperties["verticalAlign"];
+  verticalAlign?: "top" | "middle" | "bottom";
   className?: string;
   cssClass?: string;
   mjmlClass?: string;

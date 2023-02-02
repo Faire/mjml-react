@@ -11,7 +11,7 @@ import camelCase from "lodash.camelcase";
 import upperFirst from "lodash.upperfirst";
 import * as path from "path";
 
-import { typeToUnit } from "../src/utils";
+import { getPropTypeFromMjmlAttributeType } from "./generate-mjml-react-utils/getPropTypeFromMjmlAttributeType";
 
 const MJML_REACT_DIR = "src";
 
@@ -25,7 +25,7 @@ const GENERATED_HEADER_TSX = `
  */
 `;
 
-interface IMjmlComponent {
+export interface IMjmlComponent {
   componentName: string;
   allowedAttributes?: Record<string, string>;
   defaultAttributes?: Record<string, string>;
@@ -54,30 +54,14 @@ const MJML_COMPONENT_NAMES = MJML_COMPONENTS_TO_GENERATE.map(
   (component) => component.componentName
 );
 
-const ATTRIBUTES_TO_USE_CSSProperties_WITH = new Set([
-  "color",
-  "textAlign",
-  "verticalAlign",
-  "textDecoration",
-  "textTransform",
-
-  "border",
-  "borderRadius",
-  "borderColor",
-  "borderStyle",
-
-  "backgroundColor",
-  "backgroundPosition",
-  "backgroundRepeat",
-  "backgroundSize",
-]);
-
 const TYPE_OVERRIDE: { [componentName: string]: { [prop: string]: string } } = {
   mjml: { owa: "string", lang: "string" },
   "mj-style": { inline: "boolean" },
   "mj-class": { name: "string" },
   "mj-table": { cellspacing: "string", cellpadding: "string" },
   "mj-selector": { path: "string" },
+  "mj-section": { fullWidth: "boolean" },
+  "mj-wrapper": { fullWidth: "boolean" },
   "mj-html-attribute": { name: "string" },
   "mj-include": { path: "string" },
   "mj-breakpoint": { width: "string" },
@@ -118,45 +102,6 @@ const ALLOW_ANY_PROPERTY = new Set(
     ["mj-class", "mj-all"].includes(element)
   )
 );
-
-function getPropTypeFromMjmlAttributeType(
-  attribute: string,
-  mjmlAttributeType: string
-): string {
-  if (attribute === "fullWidth") {
-    return "boolean";
-  }
-  if (ATTRIBUTES_TO_USE_CSSProperties_WITH.has(attribute)) {
-    return `React.CSSProperties["${attribute}"]`;
-  }
-  if (mjmlAttributeType.startsWith("unit")) {
-    const validUnitTypes: string[] = Object.keys(typeToUnit).filter((type) =>
-      mjmlAttributeType.includes(typeToUnit[type as keyof typeof typeToUnit])
-    );
-    if (mjmlAttributeType.endsWith("{1,4}")) {
-      return `Matrix<${validUnitTypes.join(" | ")}>`;
-    }
-    return validUnitTypes.join(" | ");
-  }
-  if (mjmlAttributeType === "boolean") {
-    return "boolean";
-  }
-  if (mjmlAttributeType === "integer") {
-    return "number";
-  }
-  // e.g. "vertical-align": "enum(top,bottom,middle)"
-  if (mjmlAttributeType.startsWith("enum")) {
-    return (
-      mjmlAttributeType
-        .match(/\(.*\)/)?.[0]
-        ?.slice(1, -1)
-        .split(",")
-        .map((str) => "'" + str + "'")
-        .join(" | ") ?? "unknown"
-    );
-  }
-  return "string";
-}
 
 function buildTypesForComponent(mjmlComponent: IMjmlComponent): string {
   const {
@@ -228,17 +173,13 @@ function buildFileContents({
 }) {
   const { props, createElementProps } =
     buildReactCreateElementProps(componentName);
-  const unitsUsed = ["Matrix", ...Object.keys(typeToUnit)]
-    .filter((unit) => types.includes(unit))
-    .join(", ");
-  const unitsImports = unitsUsed ? ", " + unitsUsed : "";
 
   return `
 ${GENERATED_HEADER_TSX}
 
 import React from "react";
 
-import { convertPropsToMjmlAttributes${unitsImports} } from "../${UTILS_FILE}";
+import { convertPropsToMjmlAttributes } from "../${UTILS_FILE}";
 
 export interface I${reactName}Props {
   ${types}
@@ -257,6 +198,13 @@ function buildReactCreateElementProps(componentName: string): {
   const withChildren = "{children, ...props}";
   const withoutChildren = "props";
 
+  if (componentName === "mj-style") {
+    return {
+      props: withChildren,
+      createElementProps:
+        "{ ...convertPropsToMjmlAttributes(props), dangerouslySetInnerHTML: { __html: props.dangerouslySetInnerHTML ? props.dangerouslySetInnerHTML.__html : children } }",
+    };
+  }
   if (HAS_CHILDREN.has(componentName)) {
     return {
       props: withChildren,
