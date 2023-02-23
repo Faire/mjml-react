@@ -1,3 +1,5 @@
+[Jump to getting started](#getting-started)
+
 ## Annoucement from Engineering @ Faire
 
 Hello mjml community, we at Faire are excited to announce we will be taking over maintaining the open-source mjml-react project!
@@ -37,17 +39,37 @@ In V4 we are exploring exciting features that will make mjml-react even more pow
 
 If you want to be on the cutting edge of what is being released, we are publishing a [v4-main-alpha version](https://www.npmjs.com/package/@faire/mjml-react/v/main-alpha) to npm.
 
-## How it works
+## Getting Started
 
-Install the required dependencies first:
+1. Choose between rendering in mjml or mjml-browser based on your rendering environment. Also includes additional required dependencies.
 
+node:
 ```bash
-npm install react react-dom mjml @faire/mjml-react
+npm install @faire/mjml-react mjml react react-dom
 ```
 
-And afterwards write a code like a pro:
+browser:
+```bash
+npm install @faire/mjml-react mjml-browser react react-dom
+```
 
-```js
+2. Wire up your render function (uncomment `mjml` or `mjml-browser`)
+
+```tsx
+import { renderToMjml } from "@faire/mjml-react/utils/renderToMjml";
+// import mjml2html from "mjml";
+// import mjml2html from "mjml-browser";
+import { MJMLParseResults } from "mjml-core";
+import React from "react";
+
+export function renderReactToMjml(email: React.ReactElement): MJMLParseResults {
+  return mjml2html(renderToMjml(email));
+}
+```
+
+3. And afterwards write a code like a pro:
+
+```tsx
 import {
   Mjml,
   MjmlHead,
@@ -59,12 +81,10 @@ import {
   MjmlButton,
   MjmlImage,
 } from "@faire/mjml-react";
-// The below render import was previously:
-// import { render } from "@faire/mjml-react/dist/src/utils/render";
-// Please migrate to importing from "@faire/mjml-react/utils/render"
-import { render } from "@faire/mjml-react/utils/render";
 
-const { html, errors } = render(
+import { renderReactToMjml } from "./renderReactToMjml";
+
+const { html, errors } = renderReactToMjml(
   <Mjml>
     <MjmlHead>
       <MjmlTitle>Last Minute Offer</MjmlTitle>
