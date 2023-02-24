@@ -44,11 +44,13 @@ If you want to be on the cutting edge of what is being released, we are publishi
 1. Choose between rendering in mjml or mjml-browser based on your rendering environment. Also includes additional required dependencies.
 
 node:
+
 ```bash
 npm install @faire/mjml-react mjml react react-dom
 ```
 
 browser:
+
 ```bash
 npm install @faire/mjml-react mjml-browser react react-dom
 ```
