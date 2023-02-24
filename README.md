@@ -119,24 +119,9 @@ And as the result you will get a nice looking email HTML (works in mobile too!)
 
 ![preview](https://user-images.githubusercontent.com/10008149/41058394-59b8ce9e-69d2-11e8-9eb9-c294f35bae9f.png)
 
-## Options
-
-@faire/mjml-react sets the following MJML options when rendering to HTML:
-
-```js
-{
-  keepComments: false,
-  beautify: false,
-  minify: true,
-  validationLevel: 'strict'
-}
-```
-
-If you want to override these, you can pass an object to `render` as a second argument. See the [MJML docs](https://documentation.mjml.io/#inside-node-js) for the full list of options you can set.
-
 ## Extensions
 
-```js
+```tsx
 import {
   MjmlHtml,
   MjmlComment,
@@ -162,27 +147,13 @@ We do have also some utils for post processing the output HTML.
 Because not all mail clients do support named HTML entities, like `&apos;`.
 So we need to replace them to hex.
 
-```js
-import {
-  namedEntityToHexCode,
-  fixConditionalComment,
-} from "@faire/mjml-react/utils";
+```tsx
+import { namedEntityToHexCode } from "@faire/mjml-react/utils";
 
 const html = "<div>&apos;</div>";
 namedEntityToHexCode(html);
 // <div>&#39;</div>
-
-fixConditionalComment(
-  "<!--[if mso]><div>Hello World</div><![endif]-->",
-  "Hello",
-  "if IE"
-);
-// <!--[if IE]><div>Hello World</div><![endif]-->
 ```
-
-## Limitations
-
-Currently `mjml` and `@faire/mjml-react` libraries are meant to be run inside a node.
 
 ## Example project
 
