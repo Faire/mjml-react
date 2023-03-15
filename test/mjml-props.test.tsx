@@ -117,12 +117,22 @@ describe("mjml components prop values", () => {
     ).toBe('<mj-column border-radius="5px dashed blue">Column1</mj-column>');
   });
 
-  it("object prop value type does not make it to the component", () => {
+  it("object prop value type does make it to the component", () => {
     const { MjmlSpacer } = mjmlComponents;
     expect(
       renderToMjml(
         // @ts-expect-error invalid prop value type of object on height
-        <MjmlSpacer height={{ someValue: 10 }} />
+        <MjmlSpacer height={{ toString: () => "10px" }} />
+      )
+    ).toBe('<mj-spacer height="10px"></mj-spacer>');
+  });
+
+  it("null prop value does not make it to the component", () => {
+    const { MjmlSpacer } = mjmlComponents;
+    expect(
+      renderToMjml(
+        // @ts-expect-error invalid prop value type of object on height
+        <MjmlSpacer height={null} />
       )
     ).toBe("<mj-spacer></mj-spacer>");
   });

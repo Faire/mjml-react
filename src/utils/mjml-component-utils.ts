@@ -2,10 +2,6 @@ import kebabCase from "lodash.kebabcase";
 
 const DANGEROUSLY_SET_INNER_HTML = "dangerouslySetInnerHTML";
 
-type MJMLDangerouslySetInnerHTML = {
-  __html: string;
-};
-
 export function convertPropsToMjmlAttributes<P>(props: {
   [K in keyof P]: unknown;
 }) {
@@ -23,7 +19,7 @@ export function convertPropsToMjmlAttributes<P>(props: {
       mjmlProps[mjmlProp] = mjmlValue;
     }
     return mjmlProps;
-  }, {} as Record<string, string | MJMLDangerouslySetInnerHTML>);
+  }, {} as Record<string, string | object>);
 
   // className is a special prop used extensively in react in place of the html class attribute.
   // mjml uses a different name (css-class) for the same thing.
@@ -57,12 +53,10 @@ const numberToPixel = [
   "text-padding",
 ];
 
-const allowObject = [DANGEROUSLY_SET_INNER_HTML];
-
 function convertPropValueToMjml(
   name: string,
   value: unknown
-): string | MJMLDangerouslySetInnerHTML | undefined {
+): string | object | undefined {
   // This assumes that all numbers will be pixels which might not always be the case
   if (typeof value === "number" && numberToPixel.includes(name)) {
     return `${value}px`;
@@ -70,8 +64,8 @@ function convertPropValueToMjml(
   if (typeof value === "boolean" && booleanToString.includes(name)) {
     return name;
   }
-  if (typeof value === "object" && allowObject.includes(name)) {
-    return value as MJMLDangerouslySetInnerHTML;
+  if (typeof value === "object" && value !== null) {
+    return value;
   }
   if (typeof value === "string") {
     return value;
