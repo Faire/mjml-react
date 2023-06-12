@@ -1,6 +1,6 @@
 [Jump to getting started](#getting-started)
 
-## Annoucement from Engineering @ Faire
+## Announcement from Engineering @ Faire
 
 Hello mjml community, we at Faire are excited to announce we will be taking over maintaining the open-source mjml-react project!
 
