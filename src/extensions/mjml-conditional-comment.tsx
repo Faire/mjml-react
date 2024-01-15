@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, ReactNode } from "react";
 
 import { MjmlComment } from "./mjml-comment";
 
 interface IMjmlConditionalComment {
   condition?: string;
+  children?: ReactNode;
 }
 
 export class MjmlConditionalComment extends Component<IMjmlConditionalComment> {
