@@ -32,6 +32,7 @@ export function render(
       html: htmlMinify(parseResults.html, {
         caseSensitive: true,
         collapseWhitespace: true,
+        conservativeCollapse: true,
         minifyCSS: true,
         removeComments: true,
         removeEmptyAttributes: true,
