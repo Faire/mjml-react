@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { MjmlComment } from "./mjml-comment";
 
 interface IMjmlConditionalComment {
+  children?: React.ReactNode;
   condition?: string;
 }
 

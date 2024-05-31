@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { convertPropsToMjmlAttributes } from "../utils";
 
-export class MjmlComment extends Component {
+export class MjmlComment extends Component<{ children?: React.ReactNode }> {
   render() {
     const { children, ...rest } = this.props;
     if (children && children.toString().trim().length) {
