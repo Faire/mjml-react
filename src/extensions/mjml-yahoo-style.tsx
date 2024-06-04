@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { MjmlRaw } from "..";
 
-export class MjmlYahooStyle extends Component {
+export class MjmlYahooStyle extends Component<{ children?: React.ReactNode }> {
   render() {
     const { children, ...rest } = this.props;
     if (children && children.toString().trim().length) {
