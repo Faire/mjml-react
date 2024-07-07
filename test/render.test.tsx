@@ -1,3 +1,4 @@
+import mjml2html from "mjml";
 import React from "react";
 
 import { Mjml, MjmlHead, MjmlTitle, MjmlBody, MjmlRaw } from "../src";
@@ -17,7 +18,7 @@ describe("render()", () => {
         </MjmlBody>
       </Mjml>
     );
-    const { html } = render(email, { minify: true });
+    const { html } = render(mjml2html, email, { minify: true });
     expect(html).toBeDefined();
     expect(html).toContain("<!doctype html>");
     expect(html).toContain("<title>Title</title>");
@@ -32,7 +33,7 @@ describe("render()", () => {
         </MjmlBody>
       </Mjml>
     );
-    expect(() => render(email)).toThrow(
+    expect(() => render(mjml2html, email)).toThrow(
       "Element div doesn't exist or is not registered"
     );
   });
@@ -45,7 +46,7 @@ describe("render()", () => {
         </MjmlBody>
       </Mjml>
     );
-    const { errors } = render(email, {
+    const { errors } = render(mjml2html, email, {
       validationLevel: "soft",
       minify: false,
     });

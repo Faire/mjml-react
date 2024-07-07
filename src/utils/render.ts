@@ -1,6 +1,6 @@
 import { minify as htmlMinify } from "html-minifier";
-import mjml2html from "mjml";
 import { MJMLParsingOptions, MJMLJsonObject, MJMLParseError } from "mjml-core";
+import type mjml2htmlType from "mjml-core";
 import React from "react";
 
 import { renderToMjml } from "./renderToMjml";
@@ -12,6 +12,7 @@ interface ConvertedHtml {
 }
 
 export function render(
+  mjml2html: typeof mjml2htmlType,
   email: React.ReactElement,
   options: MJMLParsingOptions = {}
 ): ConvertedHtml {
