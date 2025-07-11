@@ -43,7 +43,7 @@ export interface IMjmlTableProps {
 export function MjmlTable({
   children,
   ...props
-}: IMjmlTableProps): JSX.Element {
+}: IMjmlTableProps): React.JSX.Element {
   return React.createElement(
     "mj-table",
     convertPropsToMjmlAttributes(props),

@@ -45,6 +45,6 @@ export interface IMjmlImageProps {
   mjmlClass?: string;
 }
 
-export function MjmlImage(props: IMjmlImageProps): JSX.Element {
+export function MjmlImage(props: IMjmlImageProps): React.JSX.Element {
   return React.createElement("mj-image", convertPropsToMjmlAttributes(props));
 }

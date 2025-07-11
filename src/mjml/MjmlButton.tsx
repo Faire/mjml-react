@@ -55,7 +55,7 @@ export interface IMjmlButtonProps {
 export function MjmlButton({
   children,
   ...props
-}: IMjmlButtonProps): JSX.Element {
+}: IMjmlButtonProps): React.JSX.Element {
   return React.createElement(
     "mj-button",
     convertPropsToMjmlAttributes(props),

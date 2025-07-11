@@ -17,7 +17,7 @@ export interface IMjmlPreviewProps {
 export function MjmlPreview({
   children,
   ...props
-}: IMjmlPreviewProps): JSX.Element {
+}: IMjmlPreviewProps): React.JSX.Element {
   return React.createElement(
     "mj-preview",
     convertPropsToMjmlAttributes(props),

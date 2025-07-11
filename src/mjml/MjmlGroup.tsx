@@ -21,7 +21,7 @@ export interface IMjmlGroupProps {
 export function MjmlGroup({
   children,
   ...props
-}: IMjmlGroupProps): JSX.Element {
+}: IMjmlGroupProps): React.JSX.Element {
   return React.createElement(
     "mj-group",
     convertPropsToMjmlAttributes(props),

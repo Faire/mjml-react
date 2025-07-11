@@ -11,7 +11,7 @@ export interface IMjmlBreakpointProps {
   dangerouslySetInnerHTML?: { __html: string };
 }
 
-export function MjmlBreakpoint(props: IMjmlBreakpointProps): JSX.Element {
+export function MjmlBreakpoint(props: IMjmlBreakpointProps): React.JSX.Element {
   return React.createElement(
     "mj-breakpoint",
     convertPropsToMjmlAttributes(props)

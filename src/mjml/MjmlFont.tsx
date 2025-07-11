@@ -15,7 +15,10 @@ export interface IMjmlFontProps {
   children?: React.ReactNode;
 }
 
-export function MjmlFont({ children, ...props }: IMjmlFontProps): JSX.Element {
+export function MjmlFont({
+  children,
+  ...props
+}: IMjmlFontProps): React.JSX.Element {
   return React.createElement(
     "mj-font",
     convertPropsToMjmlAttributes(props),

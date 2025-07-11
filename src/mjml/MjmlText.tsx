@@ -36,7 +36,10 @@ export interface IMjmlTextProps {
   dangerouslySetInnerHTML?: { __html: string };
 }
 
-export function MjmlText({ children, ...props }: IMjmlTextProps): JSX.Element {
+export function MjmlText({
+  children,
+  ...props
+}: IMjmlTextProps): React.JSX.Element {
   return React.createElement(
     "mj-text",
     convertPropsToMjmlAttributes(props),

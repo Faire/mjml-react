@@ -14,7 +14,7 @@ export interface IMjmlSelectorProps {
 export function MjmlSelector({
   children,
   ...props
-}: IMjmlSelectorProps): JSX.Element {
+}: IMjmlSelectorProps): React.JSX.Element {
   return React.createElement(
     "mj-selector",
     convertPropsToMjmlAttributes(props),

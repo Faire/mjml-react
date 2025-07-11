@@ -28,7 +28,7 @@ export interface IMjmlCarouselImageProps {
 export function MjmlCarouselImage({
   children,
   ...props
-}: IMjmlCarouselImageProps): JSX.Element {
+}: IMjmlCarouselImageProps): React.JSX.Element {
   return React.createElement(
     "mj-carousel-image",
     convertPropsToMjmlAttributes(props),

@@ -17,7 +17,7 @@ export interface IMjmlTitleProps {
 export function MjmlTitle({
   children,
   ...props
-}: IMjmlTitleProps): JSX.Element {
+}: IMjmlTitleProps): React.JSX.Element {
   return React.createElement(
     "mj-title",
     convertPropsToMjmlAttributes(props),

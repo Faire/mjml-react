@@ -27,7 +27,7 @@ export interface IMjmlAccordionTitleProps {
 export function MjmlAccordionTitle({
   children,
   ...props
-}: IMjmlAccordionTitleProps): JSX.Element {
+}: IMjmlAccordionTitleProps): React.JSX.Element {
   return React.createElement(
     "mj-accordion-title",
     convertPropsToMjmlAttributes(props),

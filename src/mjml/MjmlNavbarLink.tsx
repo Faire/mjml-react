@@ -38,7 +38,7 @@ export interface IMjmlNavbarLinkProps {
 export function MjmlNavbarLink({
   children,
   ...props
-}: IMjmlNavbarLinkProps): JSX.Element {
+}: IMjmlNavbarLinkProps): React.JSX.Element {
   return React.createElement(
     "mj-navbar-link",
     convertPropsToMjmlAttributes(props),

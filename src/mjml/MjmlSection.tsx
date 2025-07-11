@@ -40,7 +40,7 @@ export interface IMjmlSectionProps {
 export function MjmlSection({
   children,
   ...props
-}: IMjmlSectionProps): JSX.Element {
+}: IMjmlSectionProps): React.JSX.Element {
   return React.createElement(
     "mj-section",
     convertPropsToMjmlAttributes(props),
