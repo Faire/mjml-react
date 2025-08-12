@@ -30,12 +30,15 @@ describe("mjml components prop values", () => {
     ).toBe(`<mj-raw i-am-not-a-prop="random"></mj-raw>`);
   });
 
-  it("fullWidth and inline props convert to string", () => {
+  it("fullWidth, inline, and fluidOnMobile props convert to string", () => {
     expect(renderToMjml(<mjmlComponents.MjmlSection fullWidth />)).toBe(
       `<mj-section full-width="full-width"></mj-section>`
     );
     expect(renderToMjml(<mjmlComponents.MjmlStyle inline />)).toBe(
       `<mj-style inline="inline"></mj-style>`
+    );
+    expect(renderToMjml(<mjmlComponents.MjmlImage fluidOnMobile />)).toBe(
+      `<mj-image fluid-on-mobile="fluid-on-mobile"></mj-image>`
     );
   });
 
