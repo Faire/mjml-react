@@ -16,7 +16,10 @@ export interface IMjmlBodyProps {
   children?: React.ReactNode;
 }
 
-export function MjmlBody({ children, ...props }: IMjmlBodyProps): JSX.Element {
+export function MjmlBody({
+  children,
+  ...props
+}: IMjmlBodyProps): React.JSX.Element {
   return React.createElement(
     "mj-body",
     convertPropsToMjmlAttributes(props),

@@ -185,7 +185,7 @@ export interface I${reactName}Props {
   ${types}
 }
 
-export function ${reactName}(${props}: I${reactName}Props): JSX.Element {
+export function ${reactName}(${props}: I${reactName}Props): React.JSX.Element {
   return React.createElement("${componentName}", ${createElementProps});
 };
 `;

@@ -50,7 +50,7 @@ export interface IMjmlSocialElementProps {
 export function MjmlSocialElement({
   children,
   ...props
-}: IMjmlSocialElementProps): JSX.Element {
+}: IMjmlSocialElementProps): React.JSX.Element {
   return React.createElement(
     "mj-social-element",
     convertPropsToMjmlAttributes(props),

@@ -10,6 +10,6 @@ export interface IMjmlIncludeProps {
   path?: string;
 }
 
-export function MjmlInclude(props: IMjmlIncludeProps): JSX.Element {
+export function MjmlInclude(props: IMjmlIncludeProps): React.JSX.Element {
   return React.createElement("mj-include", convertPropsToMjmlAttributes(props));
 }

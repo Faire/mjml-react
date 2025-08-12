@@ -39,7 +39,7 @@ export interface IMjmlColumnProps {
 export function MjmlColumn({
   children,
   ...props
-}: IMjmlColumnProps): JSX.Element {
+}: IMjmlColumnProps): React.JSX.Element {
   return React.createElement(
     "mj-column",
     convertPropsToMjmlAttributes(props),

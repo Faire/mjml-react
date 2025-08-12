@@ -40,7 +40,7 @@ export interface IMjmlWrapperProps {
 export function MjmlWrapper({
   children,
   ...props
-}: IMjmlWrapperProps): JSX.Element {
+}: IMjmlWrapperProps): React.JSX.Element {
   return React.createElement(
     "mj-wrapper",
     convertPropsToMjmlAttributes(props),

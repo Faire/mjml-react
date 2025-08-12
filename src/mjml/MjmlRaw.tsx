@@ -15,7 +15,10 @@ export interface IMjmlRawProps {
   dangerouslySetInnerHTML?: { __html: string };
 }
 
-export function MjmlRaw({ children, ...props }: IMjmlRawProps): JSX.Element {
+export function MjmlRaw({
+  children,
+  ...props
+}: IMjmlRawProps): React.JSX.Element {
   return React.createElement(
     "mj-raw",
     convertPropsToMjmlAttributes(props),

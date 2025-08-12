@@ -11,6 +11,6 @@ export interface IMjmlClassProps {
   [prop: string]: string | undefined;
 }
 
-export function MjmlClass(props: IMjmlClassProps): JSX.Element {
+export function MjmlClass(props: IMjmlClassProps): React.JSX.Element {
   return React.createElement("mj-class", convertPropsToMjmlAttributes(props));
 }

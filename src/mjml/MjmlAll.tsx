@@ -13,6 +13,6 @@ export interface IMjmlAllProps {
   [prop: string]: string | undefined;
 }
 
-export function MjmlAll(props: IMjmlAllProps): JSX.Element {
+export function MjmlAll(props: IMjmlAllProps): React.JSX.Element {
   return React.createElement("mj-all", convertPropsToMjmlAttributes(props));
 }

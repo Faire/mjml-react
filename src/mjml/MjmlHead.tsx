@@ -13,7 +13,10 @@ export interface IMjmlHeadProps {
   children?: React.ReactNode;
 }
 
-export function MjmlHead({ children, ...props }: IMjmlHeadProps): JSX.Element {
+export function MjmlHead({
+  children,
+  ...props
+}: IMjmlHeadProps): React.JSX.Element {
   return React.createElement(
     "mj-head",
     convertPropsToMjmlAttributes(props),

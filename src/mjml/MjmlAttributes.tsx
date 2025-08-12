@@ -16,7 +16,7 @@ export interface IMjmlAttributesProps {
 export function MjmlAttributes({
   children,
   ...props
-}: IMjmlAttributesProps): JSX.Element {
+}: IMjmlAttributesProps): React.JSX.Element {
   return React.createElement(
     "mj-attributes",
     convertPropsToMjmlAttributes(props),

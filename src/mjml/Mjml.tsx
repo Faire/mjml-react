@@ -12,7 +12,7 @@ export interface IMjmlProps {
   lang?: string;
 }
 
-export function Mjml({ children, ...props }: IMjmlProps): JSX.Element {
+export function Mjml({ children, ...props }: IMjmlProps): React.JSX.Element {
   return React.createElement(
     "mjml",
     convertPropsToMjmlAttributes(props),

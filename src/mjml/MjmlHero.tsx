@@ -37,7 +37,10 @@ export interface IMjmlHeroProps {
   children?: React.ReactNode;
 }
 
-export function MjmlHero({ children, ...props }: IMjmlHeroProps): JSX.Element {
+export function MjmlHero({
+  children,
+  ...props
+}: IMjmlHeroProps): React.JSX.Element {
   return React.createElement(
     "mj-hero",
     convertPropsToMjmlAttributes(props),

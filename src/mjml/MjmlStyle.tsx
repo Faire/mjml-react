@@ -15,7 +15,7 @@ export interface IMjmlStyleProps {
 export function MjmlStyle({
   children,
   ...props
-}: IMjmlStyleProps): JSX.Element {
+}: IMjmlStyleProps): React.JSX.Element {
   return React.createElement("mj-style", {
     ...convertPropsToMjmlAttributes(props),
     dangerouslySetInnerHTML: {

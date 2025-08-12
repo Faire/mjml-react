@@ -27,7 +27,7 @@ export interface IMjmlAccordionElementProps {
 export function MjmlAccordionElement({
   children,
   ...props
-}: IMjmlAccordionElementProps): JSX.Element {
+}: IMjmlAccordionElementProps): React.JSX.Element {
   return React.createElement(
     "mj-accordion-element",
     convertPropsToMjmlAttributes(props),
