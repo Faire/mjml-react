@@ -51,6 +51,7 @@ const numberToPixel = [
   "line-height",
   "icon-padding",
   "text-padding",
+  "inner-padding",
 ];
 
 function convertPropValueToMjml(
