@@ -86,12 +86,12 @@ describe("mjml components prop values", () => {
   it("padding and other props convert number type props to pixel values", () => {
     const { MjmlButton } = mjmlComponents;
     const button = (
-      <MjmlButton padding={16} width={300} height={56}>
+      <MjmlButton padding={16} width={300} height={56} innerPadding={10}>
         Single num
       </MjmlButton>
     );
     expect(renderToMjml(button)).toBe(
-      '<mj-button padding="16px" width="300px" height="56px">Single num</mj-button>'
+      '<mj-button padding="16px" width="300px" height="56px" inner-padding="10px">Single num</mj-button>'
     );
   });
 
