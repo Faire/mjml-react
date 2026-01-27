@@ -1,6 +1,17 @@
 import React from "react";
 
-import { Mjml, MjmlHead, MjmlTitle, MjmlBody, MjmlRaw } from "../src";
+import {
+  Mjml,
+  MjmlHead,
+  MjmlTitle,
+  MjmlBody,
+  MjmlRaw,
+  MjmlSection,
+  MjmlColumn,
+  MjmlText,
+  MjmlButton,
+  MjmlImage,
+} from "../src";
 import { render } from "../src/utils/render";
 
 describe("render()", () => {
@@ -53,5 +64,33 @@ describe("render()", () => {
     expect(errors![0]!.message).toContain(
       "Element div doesn't exist or is not registered"
     );
+  });
+
+  it("should handle all prop types (numbers, booleans, strings, objects, etc.) without error", () => {
+    const email = (
+      <Mjml>
+        <MjmlBody>
+          {/* Boolean in booleanToString array -> returns property name */}
+          <MjmlSection fullWidth>
+            {/* Number in numberToPixel array -> returns `${value}px` */}
+            <MjmlColumn width={300}>
+              <MjmlText
+                color="red" // String value -> returns string as-is
+                fontSize={16} // Number in numberToPixel array -> returns `${value}px`
+              >
+                Test text content
+              </MjmlText>
+              <MjmlButton>Click me</MjmlButton>
+              {/* Boolean NOT in booleanToString array -> returns `${value}` (string) */}
+              <MjmlImage fluidOnMobile />
+            </MjmlColumn>
+          </MjmlSection>
+        </MjmlBody>
+      </Mjml>
+    );
+    const { html, errors } = render(email);
+    // Verify no errors when rendering the different prop types
+    expect(errors).toHaveLength(0);
+    expect(html).toBeDefined();
   });
 });
