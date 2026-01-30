@@ -106,7 +106,15 @@
           "changelogFile": "CHANGELOG.md"
         }
       ],
-      "@semantic-release/npm",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": true,
+          "tarballDir": false,
+          "pkgRoot": ".",
+          "provenance": true
+        }
+      ],
       "@semantic-release/github"
     ]
   }
