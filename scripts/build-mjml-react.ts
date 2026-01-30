@@ -15,7 +15,15 @@ function moveFilesToDist() {
     const destination = `dist/${fileToCopy}`;
     if (fileToCopy === "package.json") {
       const file = fs.readFileSync(fileToCopy);
-      fs.writeFileSync(destination, file.toString().replace(/dist\//g, ""));
+      const packageJson = JSON.parse(file.toString().replace(/dist\//g, ""));
+
+      // Remove fields that shouldn't be in the published package
+      delete packageJson.devDependencies;
+      delete packageJson.scripts;
+      delete packageJson.release; // Remove semantic-release config!
+      delete packageJson.packageManager;
+
+      fs.writeFileSync(destination, JSON.stringify(packageJson, null, 2));
     } else {
       fs.copyFileSync(fileToCopy, destination);
     }
