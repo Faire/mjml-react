@@ -45,7 +45,6 @@ jobs:
 
       - name: Run semantic release (release + bump version)
         run: |
-          cd dist
           npx semantic-release
         env:
           HUSKY: 0
