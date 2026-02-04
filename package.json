@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/exec": "^7.1.0",
     "@semantic-release/git": "^10.0.1",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "@types/html-minifier": "^4.0.2",
@@ -110,17 +109,12 @@
       [
         "@semantic-release/npm",
         {
-          "npmPublish": false,
+          "npmPublish": true,
           "pkgRoot": "dist"
-        }
-      ],
-      [
-        "@semantic-release/exec",
-        {
-          "publishCmd": "cd dist && npm publish --provenance --access public"
         }
       ],
       "@semantic-release/github"
     ]
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
