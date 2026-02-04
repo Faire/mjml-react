@@ -34,7 +34,7 @@ export function convertPropsToMjmlAttributes<P>(props: {
   return mjmlProps;
 }
 
-const booleanToString = ["inline", "full-width", "fluid-on-mobile"];
+const booleanToString = ["inline", "full-width"];
 const numberToPixel = [
   "width",
   "height",
@@ -64,6 +64,9 @@ function convertPropValueToMjml(
   }
   if (typeof value === "boolean" && booleanToString.includes(name)) {
     return name;
+  }
+  if (typeof value === "boolean") {
+    return `${value}`;
   }
   if (typeof value === "object" && value !== null) {
     return value;

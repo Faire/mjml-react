@@ -37,9 +37,15 @@ describe("mjml components prop values", () => {
     expect(renderToMjml(<mjmlComponents.MjmlStyle inline />)).toBe(
       `<mj-style inline="inline"></mj-style>`
     );
+  });
+
+  it("boolean props convert as expected", () => {
     expect(renderToMjml(<mjmlComponents.MjmlImage fluidOnMobile />)).toBe(
-      `<mj-image fluid-on-mobile="fluid-on-mobile"></mj-image>`
+      `<mj-image fluid-on-mobile="true"></mj-image>`
     );
+    expect(
+      renderToMjml(<mjmlComponents.MjmlImage fluidOnMobile={false} />)
+    ).toBe(`<mj-image fluid-on-mobile="false"></mj-image>`);
   });
 
   it("enum prop type accepts all enum values", () => {
