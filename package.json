@@ -42,6 +42,8 @@
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.0",
+    "@semantic-release/npm": "^13.1.5",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "@types/html-minifier": "^4.0.2",
     "@types/jest": "^29.1.2",
@@ -84,6 +86,10 @@
   "module": "dist/esm/index.js",
   "dependencies": {
     "lodash.kebabcase": "^4.1.1"
+  },
+  "resolutions": {
+    "@semantic-release/npm": "^13.1.5",
+    "@semantic-release/github": "^12.0.6"
   },
   "release": {
     "branches": [
