@@ -1,8 +1,7 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
+import baseConfig from "./jest.config.mjs";
 
-const baseConfig = require("./jest.config");
-
-module.exports = {
+export default {
   ...baseConfig,
   moduleNameMapper: {
     "src(.*)$": "<rootDir>/dist$1",

@@ -1,5 +1,7 @@
 // import camelCase from "lodash.camelcase";
 import _ from "lodash";
+// @ts-expect-error - no types available for mjml-preset-core
+import * as presetCore from "mjml-preset-core";
 
 import { IMjmlComponent } from "../../scripts/generate-mjml-react";
 import {
@@ -34,8 +36,7 @@ describe("getPropTypeFromMjmlAttributeType", () => {
   );
 
   describe("use CSSProperties for useful mjml types", () => {
-    const presetCoreComponents: Array<IMjmlComponent> =
-      require("mjml-preset-core").components;
+    const presetCoreComponents: Array<IMjmlComponent> = presetCore.components;
 
     const allMjmlTypesGroupedByAttribute = presetCoreComponents.reduce(
       (map, component) => {

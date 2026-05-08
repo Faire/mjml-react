@@ -46,7 +46,7 @@ module.exports = {
 
     /* typescript-eslint rules */
     "@typescript-eslint/adjacent-overload-signatures": "off",
-    "@typescript-eslint/ban-types": [
+    "@typescript-eslint/no-restricted-types": [
       "error",
       {
         types: {
@@ -70,7 +70,7 @@ module.exports = {
     "@typescript-eslint/no-inferrable-types": "off",
     "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
-    "@typescript-eslint/no-throw-literal": "error",
+    "@typescript-eslint/only-throw-error": "error",
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/no-unused-expressions": [
       "error",

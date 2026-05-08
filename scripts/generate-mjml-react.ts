@@ -5,10 +5,13 @@
  *
  * usage `node --require ts-node/register scripts/generate-mjml-react.ts`
  */
+import * as childProcess from "child_process";
 import * as del from "del";
 import * as fs from "fs";
 import camelCase from "lodash.camelcase";
 import upperFirst from "lodash.upperfirst";
+// @ts-expect-error - no types available for mjml-preset-core
+import * as presetCore from "mjml-preset-core";
 import * as path from "path";
 
 import { getPropTypeFromMjmlAttributeType } from "./generate-mjml-react-utils/getPropTypeFromMjmlAttributeType";
@@ -32,8 +35,8 @@ export interface IMjmlComponent {
   endingTag?: true;
 }
 
-const PRESET_CORE_COMPONENTS: Array<IMjmlComponent> =
-  require("mjml-preset-core").components;
+const PRESET_CORE_COMPONENTS: Array<IMjmlComponent> = presetCore.components;
+
 const OTHER_SUPPORTED_COMPONENTS = [
   "mjml",
   "mj-all",
@@ -281,6 +284,6 @@ ${gitAttributes}
 `
 );
 
-require("child_process").execSync(
+childProcess.execSync(
   `yarn prettier --write ${GENERATED_MJML_FILES} ${MJML_INDEX_FILE} ${MAIN_INDEX_FILE}`
 );
