@@ -10,7 +10,6 @@ import * as del from "del";
 import * as fs from "fs";
 import camelCase from "lodash.camelcase";
 import upperFirst from "lodash.upperfirst";
-// @ts-expect-error - no types available for mjml-preset-core
 import * as presetCore from "mjml-preset-core";
 import * as path from "path";
 
@@ -35,7 +34,7 @@ export interface IMjmlComponent {
   endingTag?: true;
 }
 
-const PRESET_CORE_COMPONENTS: Array<IMjmlComponent> = presetCore.components;
+const PRESET_CORE_COMPONENTS = presetCore.components as Array<IMjmlComponent>;
 
 const OTHER_SUPPORTED_COMPONENTS = [
   "mjml",
