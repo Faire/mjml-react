@@ -4,7 +4,7 @@ import React from "react";
 
 import { renderToMjml } from "./renderToMjml";
 
-interface ConvertedHtml {
+export interface ConvertedHtml {
   html: string;
   json?: MJMLJsonObject;
   errors?: MJMLParseError[];
