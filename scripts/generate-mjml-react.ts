@@ -48,7 +48,7 @@ const OTHER_SUPPORTED_COMPONENTS = [
 
 const MJML_COMPONENTS_TO_GENERATE = [
   ...OTHER_SUPPORTED_COMPONENTS.map(
-    (componentName) => ({ componentName } as IMjmlComponent)
+    (componentName) => ({ componentName }) as IMjmlComponent
   ),
   ...PRESET_CORE_COMPONENTS,
 ];

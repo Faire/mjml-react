@@ -69,7 +69,7 @@ describe("getPropTypeFromMjmlAttributeType", () => {
             ({
               mjmlType,
               attribute,
-            } as { mjmlType: string; attribute: string })
+            }) as { mjmlType: string; attribute: string }
         );
       })
     );
