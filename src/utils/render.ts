@@ -1,8 +1,8 @@
 import mjml2html from "mjml";
-import { MJMLParsingOptions, MJMLJsonObject, MJMLParseError } from "mjml-core";
-import React from "react";
+import type { MJMLParsingOptions, MJMLJsonObject, MJMLParseError } from "mjml-core";
+import type React from "react";
 
-import { renderToMjml } from "./renderToMjml";
+import { renderToMjml } from "./renderToMjml.ts";
 
 export interface ConvertedHtml {
   html: string;

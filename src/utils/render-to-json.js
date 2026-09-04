@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 import ReactReconciler from "react-reconciler";
 
-import { noop, escapeTextForBrowser, trimContent } from "./render-utils";
+import { noop, escapeTextForBrowser, trimContent } from "./render-utils.ts";
 
 const reconciler = ReactReconciler({
   supportsMutation: true,

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { MjmlComment } from "./mjml-comment";
+import { MjmlComment } from "./mjml-comment.ts";
 
 interface IMjmlConditionalComment {
   children?: React.ReactNode;

@@ -1,9 +1,10 @@
+import { describe, test, expect } from "vitest";
 // import camelCase from "lodash.camelcase";
 import _ from "lodash";
 // @ts-expect-error - no types available for mjml-preset-core
 import * as presetCore from "mjml-preset-core";
 
-import { IMjmlComponent } from "../../scripts/generate-mjml-react";
+import type { IMjmlComponent } from "../../scripts/generate-mjml-react";
 import {
   ATTRIBUTES_TO_USE_CSSProperties_WITH,
   getPropTypeFromMjmlAttributeType,

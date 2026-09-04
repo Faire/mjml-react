@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { convertPropsToMjmlAttributes } from "../utils";
+import { convertPropsToMjmlAttributes } from "../utils/index.ts";
 
 export class MjmlComment extends Component<{ children?: React.ReactNode }> {
   render() {

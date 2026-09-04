@@ -1,2 +1,2 @@
-export { namedEntityToHexCode } from "./html-entities";
-export * from "./mjml-component-utils";
+export { namedEntityToHexCode } from "./html-entities.ts";
+export * from "./mjml-component-utils.ts";

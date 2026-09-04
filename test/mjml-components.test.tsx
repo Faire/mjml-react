@@ -1,3 +1,4 @@
+import { describe, test, expect } from "vitest";
 import { renderToMjml } from "../src/utils/renderToMjml";
 
 import { mockMjmlReactTestData } from "./__mockData__/mockMjmlReactTestData";

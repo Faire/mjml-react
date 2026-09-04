@@ -1,9 +1,7 @@
-#!/usr/bin/env ts-node
-
 /**
  * Generate the mjml components
  *
- * usage `node --require ts-node/register scripts/generate-mjml-react.ts`
+ * usage `node scripts/generate-mjml-react.ts`
  */
 import * as childProcess from "child_process";
 import * as del from "del";
@@ -11,10 +9,10 @@ import * as fs from "fs";
 import camelCase from "lodash.camelcase";
 import upperFirst from "lodash.upperfirst";
 // @ts-expect-error - no types available for mjml-preset-core
-import * as presetCore from "mjml-preset-core";
+import presetCore from "mjml-preset-core";
 import * as path from "path";
 
-import { getPropTypeFromMjmlAttributeType } from "./generate-mjml-react-utils/getPropTypeFromMjmlAttributeType";
+import { getPropTypeFromMjmlAttributeType } from "./generate-mjml-react-utils/getPropTypeFromMjmlAttributeType.ts";
 
 const MJML_REACT_DIR = "src";
 
@@ -182,7 +180,7 @@ ${GENERATED_HEADER_TSX}
 
 import React from "react";
 
-import { convertPropsToMjmlAttributes } from "../${UTILS_FILE}";
+import { convertPropsToMjmlAttributes } from "../${UTILS_FILE}/index.ts";
 
 export interface I${reactName}Props {
   ${types}
@@ -250,8 +248,8 @@ ${GENERATED_HEADER_TSX}
 ${MJML_COMPONENTS_TO_GENERATE.map(({ componentName }) => {
   const mjmlPackageName = componentName.replace("mj-", "mjml-");
   const reactName = upperFirst(camelCase(mjmlPackageName));
-  return `export { ${reactName} } from './${reactName}';
-export type { I${reactName}Props } from './${reactName}';`;
+  return `export { ${reactName} } from './${reactName}.tsx';
+export type { I${reactName}Props } from './${reactName}.tsx';`;
 }).join("\n")}
 `
 );
@@ -263,8 +261,8 @@ fs.writeFileSync(
   `
 ${GENERATED_HEADER_TSX}
 
-export * from "./${UTILS_FILE}";
-export * from "./${MJML_COMPONENTS_FOLDER}";
+export * from "./${UTILS_FILE}/index.ts";
+export * from "./${MJML_COMPONENTS_FOLDER}/index.tsx";
 `
 );
 

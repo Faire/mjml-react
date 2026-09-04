@@ -18,6 +18,7 @@
     "url": "https://github.com/Faire/mjml-react/issues"
   },
   "main": "dist/index.js",
+  "type": "module",
   "types": "dist/index.d.ts",
   "directories": {
     "test": "test"
@@ -27,16 +28,15 @@
     "access": "public"
   },
   "scripts": {
-    "build-dist": "/bin/rm -rf dist && yarn build-cjs && yarn build-esm",
-    "build-cjs": "tsc -p tsconfig.json",
-    "build-esm": "tsc -p tsconfig-esm.json",
+    "build-dist": "/bin/rm -rf dist && yarn build-esm",
+    "build-esm": "tsc -p tsconfig.json",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "test-dist-skip-build": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config=jest-dist.config.mjs",
+    "test": "vitest run",
+    "test-dist-skip-build": "vitest run --config vitest-dist.config.js",
     "test-dist": "yarn build-dist && yarn test-dist-skip-build",
-    "generate-mjml-react": "ts-node scripts/generate-mjml-react.ts",
-    "build-mjml-react": "ts-node scripts/build-mjml-react.ts",
+    "generate-mjml-react": "node scripts/generate-mjml-react.ts",
+    "build-mjml-react": "node scripts/build-mjml-react.ts",
     "prepare": "husky install"
   },
   "devDependencies": {
@@ -45,7 +45,6 @@
     "@semantic-release/github": "^12.0.0",
     "@semantic-release/npm": "^13.1.5",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
-    "@types/jest": "^29.5.14",
     "@types/lodash.camelcase": "^4.3.9",
     "@types/lodash.kebabcase": "^4.1.9",
     "@types/lodash.upperfirst": "^4.3.9",
@@ -55,16 +54,14 @@
     "@types/react-dom": "^18.3",
     "@typescript-eslint/eslint-plugin": "^8.59.2",
     "@typescript-eslint/parser": "^8.59.2",
+    "@vitejs/plugin-react": "^6.1.1",
     "del": "^6.0.0",
     "eslint": "^8.57.1",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jest": "^29.15.2",
-    "eslint-plugin-jest-dom": "^5.5.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-testing-library": "^7.16.2",
     "husky": "^8.0.0",
-    "jest": "^29.7.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.upperfirst": "^4.3.1",
     "mjml": "^5.0.1",
@@ -73,16 +70,15 @@
     "react": "^18.3",
     "react-dom": "^18.3",
     "semantic-release": "^24.0.0",
-    "ts-jest": "^29.4.9",
-    "ts-node": "^10.9.2",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "vite": "^8.2.2",
+    "vitest": "^5.0.0"
   },
   "peerDependencies": {
     "mjml": "^5.0.0",
     "react": "^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
   },
-  "module": "dist/esm/index.js",
   "dependencies": {
     "lodash.kebabcase": "^4.1.1"
   },

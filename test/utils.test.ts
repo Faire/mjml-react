@@ -1,4 +1,5 @@
 import { namedEntityToHexCode } from "../src/utils/index";
+import { describe, it, expect } from "vitest";
 
 describe("utils", () => {
   describe("namedEntityToHexCode", () => {

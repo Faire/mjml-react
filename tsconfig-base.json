@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "jsx": "react",
     "lib": ["esnext"],
+    "rewriteRelativeImportExtensions": true,
     "allowJs": true,
 
     "noImplicitAny": true,
@@ -16,7 +17,6 @@
     "isolatedModules": true,
     "forceConsistentCasingInFileNames": true,
 
-    "downlevelIteration": true,
     "noFallthroughCasesInSwitch": true,
     "useUnknownInCatchVariables": false,
     "useDefineForClassFields": false,

@@ -16,8 +16,6 @@ module.exports = {
     "react-hooks",
     "import",
     /* testing plugins */
-    "jest",
-    "jest-dom",
     "testing-library",
   ],
   extends: [
@@ -89,7 +87,8 @@ module.exports = {
       },
     ],
     "@typescript-eslint/no-var-requires": "off",
-
+    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/no-import-type-side-effects": "error",
     /* react rules */
     "react/display-name": "off",
     "react/jsx-curly-brace-presence": ["error", { props: "never" }],
@@ -117,25 +116,7 @@ module.exports = {
       },
     },
     {
-      files: ["**/?(*.)+(test).ts?(x)"],
-      extends: ["plugin:jest/recommended", "plugin:jest/style"],
-      rules: {
-        "jest/expect-expect": [
-          "warn",
-          {
-            assertFunctionNames: ["expect*"],
-            additionalTestBlockFunctions: [],
-          },
-        ],
-        "jest/no-standalone-expect": [
-          "error",
-          { additionalTestBlockFunctions: ["afterEach"] },
-        ],
-      },
-    },
-    {
       files: ["test/**/*"],
-      env: { jest: true },
       rules: {
         "no-undef": "off",
         "@typescript-eslint/no-unused-expressions": "off",
@@ -144,7 +125,7 @@ module.exports = {
     },
     {
       files: ["**/?(*.)+(test).tsx"],
-      extends: ["plugin:testing-library/react", "plugin:jest-dom/recommended"],
+      extends: ["plugin:testing-library/react"],
       rules: {
         "testing-library/prefer-user-event": "error",
       },

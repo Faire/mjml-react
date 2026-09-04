@@ -1,4 +1,5 @@
 import React from "react";
+import { describe, it, expect } from "vitest";
 
 import * as mjmlComponents from "../src/mjml";
 import { renderToMjml } from "../src/utils/renderToMjml";

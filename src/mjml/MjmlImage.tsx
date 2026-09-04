@@ -4,7 +4,7 @@
  */
 import React from "react";
 
-import { convertPropsToMjmlAttributes } from "../utils";
+import { convertPropsToMjmlAttributes } from "../utils/index.ts";
 
 export interface IMjmlImageProps {
   alt?: string;

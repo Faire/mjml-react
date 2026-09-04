@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { MjmlRaw } from "..";
+import { MjmlRaw } from "../mjml/MjmlRaw.tsx";
 
 interface IMjmlTrackingPixel {
   src: string;

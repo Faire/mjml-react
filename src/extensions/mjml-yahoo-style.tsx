@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { MjmlRaw } from "..";
+import { MjmlRaw } from "../mjml/MjmlRaw.tsx";
 
 export class MjmlYahooStyle extends Component<{ children?: React.ReactNode }> {
   render() {
