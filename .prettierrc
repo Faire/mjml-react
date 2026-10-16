@@ -1,5 +1,7 @@
 {
+  "trailingComma": "es5",
   "importOrder": ["<THIRD_PARTY_MODULES>", "^\\.\\./(.*)$", "^[./]"],
   "importOrderSeparation": true,
-  "importOrderCaseInsensitive": true
+  "importOrderCaseInsensitive": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }

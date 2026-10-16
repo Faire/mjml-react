@@ -5,21 +5,24 @@ const DANGEROUSLY_SET_INNER_HTML = "dangerouslySetInnerHTML";
 export function convertPropsToMjmlAttributes<P>(props: {
   [K in keyof P]: unknown;
 }) {
-  const mjmlProps = Object.entries(props).reduce((mjmlProps, [prop, value]) => {
-    const mjmlProp =
-      prop === DANGEROUSLY_SET_INNER_HTML ? prop : kebabCase(prop);
-    const mjmlValue = convertPropValueToMjml(mjmlProp, value);
+  const mjmlProps = Object.entries(props).reduce(
+    (mjmlProps, [prop, value]) => {
+      const mjmlProp =
+        prop === DANGEROUSLY_SET_INNER_HTML ? prop : kebabCase(prop);
+      const mjmlValue = convertPropValueToMjml(mjmlProp, value);
 
-    if (mjmlValue === undefined || prop === "className") {
+      if (mjmlValue === undefined || prop === "className") {
+        return mjmlProps;
+      }
+      if (prop === "mjmlClass") {
+        mjmlProps["mj-class"] = mjmlValue;
+      } else {
+        mjmlProps[mjmlProp] = mjmlValue;
+      }
       return mjmlProps;
-    }
-    if (prop === "mjmlClass") {
-      mjmlProps["mj-class"] = mjmlValue;
-    } else {
-      mjmlProps[mjmlProp] = mjmlValue;
-    }
-    return mjmlProps;
-  }, {} as Record<string, string | object>);
+    },
+    {} as Record<string, string | object>
+  );
 
   // className is a special prop used extensively in react in place of the html class attribute.
   // mjml uses a different name (css-class) for the same thing.
